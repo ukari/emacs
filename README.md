@@ -17,6 +17,7 @@ npm install -g tern
 ## others
 - git
 - monokai theme
+- speedbar
 
 ## Linux Service(emacs run as daemon)
 - get the file in `./emacs@.service`
