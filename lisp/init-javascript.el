@@ -11,6 +11,7 @@
 	    (auto-complete-mode)
 	    (tern-mode)
 	    (tern-ac-setup)
+	    (paredit-everywhere)
 	    (message "js mode")))
 
 
