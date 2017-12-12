@@ -8,6 +8,7 @@
 (require 'init-theme)
 
 (require 'init-javascript)
+(require 'init-markdown)
 
 (add-hook 'after-init-hook (lambda () (message "init finished")))
 
