@@ -5,6 +5,8 @@
 (require 'init-repository)
 (require 'init-packages)
 
+(require 'init-theme)
+
 (require 'init-javascript)
 
 (add-hook 'after-init-hook (lambda () (message "init finished")))
