@@ -12,6 +12,6 @@
  '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.0))))
  '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.0))))
  '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.0))))
- '(markdown-inline-code-face ((t (:inherit font-lock-constant-face)))))
+ '(markdown-inline-code-face ((t (:inherit font-lock-constant-face :foreground "#b029b0")))))
 
 (provide 'init-markdown)
