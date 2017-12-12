@@ -15,13 +15,14 @@ npm install -g tern
 - JavaScript, JSX
 
 ## others
+- git
 - monokai theme
 
 ## Linux Service(emacs run as daemon)
 - get the file in `./emacs@.service`
 
 ### benefits
-- it allows you switch input method in emacsclient -c mode
+- it allows you switch input method in emacsclient -c mode when use fcitx
 
 ### usage
 1. put this file to /etc/systemd/system/emacs@.service
