@@ -30,3 +30,7 @@ npm install -g tern
 2. auto startup on `systemctl enable emacs@your_user_name.service`
 3. restart by `systemctl restart emacs@your_user_name.service`
 4. connect by `emacsclient -ec` or `emacsclient -t`
+
+## Shortcuts
+- `F4` save & close other file buffers
+- `F5` toggle file tree (by speedbar)
