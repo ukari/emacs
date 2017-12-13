@@ -2,5 +2,4 @@
 
 (add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
 
-
 (provide 'init-theme)
