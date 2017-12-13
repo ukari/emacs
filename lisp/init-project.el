@@ -18,6 +18,6 @@
 			(kill-buffer b)))
 	(delq (current-buffer) (buffer-list))))
 
-(global-set-key (kbd "<f4>") (lambda() (save-and-kill-other-buffers)))
+(global-set-key (kbd "<f4>") (lambda() (interactive) (save-and-kill-other-buffers)))
 
 (provide 'init-project)
