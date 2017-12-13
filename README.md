@@ -29,3 +29,4 @@ npm install -g tern
 1. put this file to /etc/systemd/system/emacs@.service
 2. auto startup on `systemctl enable emacs@your_user_name.service`
 3. restart by `systemctl restart emacs@your_user_name.service`
+4. connect by `emacsclient -ec` or `emacsclient -t`
