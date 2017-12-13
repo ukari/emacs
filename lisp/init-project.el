@@ -4,9 +4,7 @@
 (setq dframe-update-speed 1)
 (setq sr-speedbar-auto-refresh t)
 
-(global-set-key (kbd "<f5>") (lambda()
-          (interactive)
-          (sr-speedbar-toggle)))
+(global-set-key (kbd "<f5>") (lambda() (interactive) (sr-speedbar-toggle)))
 
 (setq speedbar-use-images nil)
 
@@ -19,5 +17,7 @@
   (mapc (lambda (b) (if (buffer-file-name b)
 			(kill-buffer b)))
 	(delq (current-buffer) (buffer-list))))
+
+(global-set-key (kbd "<f4>") (lambda() (save-and-kill-other-buffers)))
 
 (provide 'init-project)
