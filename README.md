@@ -10,11 +10,11 @@ npm install -g tern
 
 ## Supports
 
-## languages
+### languages
 - Markdown
 - JavaScript, JSX
 
-## others
+### others
 - git
 - monokai theme
 - speedbar
