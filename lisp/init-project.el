@@ -10,4 +10,14 @@
 
 (setq speedbar-use-images nil)
 
+(defun save-and-kill-other-buffers ()
+  (interactive)
+  (mapc (lambda (b) (if (buffer-file-name b)
+			(with-current-buffer b
+			  (save-buffer b))))
+	(delq (current-buffer) (buffer-list)))
+  (mapc (lambda (b) (if (buffer-file-name b)
+			(kill-buffer b)))
+	(delq (current-buffer) (buffer-list))))
+
 (provide 'init-project)
