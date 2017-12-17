@@ -2,10 +2,12 @@
 
 ## Dependencies
 - tern
+- tern-jsx
 
 ### tern
 ``` bash
 npm install -g tern
+npm install -g tern-jsx
 ```
 
 ## Supports
