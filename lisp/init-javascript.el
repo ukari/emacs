@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (require-package 'tern)
 (require-package 'tern-auto-complete)
 
@@ -8,10 +10,11 @@
             (setq indent-tabs-mode nil)
 	    (setq js2-basic-offset 2)
 	    (setq js2-strict-missing-semi-warning nil)
-	    (auto-complete-mode)
-	    (tern-mode)
-	    (tern-ac-setup)
 	    (paredit-everywhere)
+	    (tern-mode t)
+	    (auto-complete-mode)
+	    (tern-ac-setup)
+	    (tern-ac-complete)
 	    (message "js mode")))
 
 

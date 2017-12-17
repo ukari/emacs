@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (require 'init-repository)
 
 (unless package-archive-contents

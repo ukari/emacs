@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (require-package 'diff-hl)
 
 (global-diff-hl-mode)

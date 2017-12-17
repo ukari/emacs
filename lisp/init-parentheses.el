@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (require-package 'paredit)
 (require-package 'rainbow-delimiters)
 
