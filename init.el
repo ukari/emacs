@@ -9,9 +9,12 @@
 (require 'init-repository)
 (require 'init-packages)
 
+(require 'init-utils)
+
 (require 'init-parentheses)
 (require 'init-theme)
 
+(require 'init-json)
 (require 'init-javascript)
 (require 'init-markdown)
 (require 'init-git)
@@ -21,6 +24,6 @@
 (if (file-exists-p custom-file)
     (load custom-file))
 
-(add-hook 'after-init-hook (lambda () (message "init finished")))
+(on-init (lambda () (message "init finished")))
 
 (provide 'init)

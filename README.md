@@ -15,6 +15,7 @@ npm install -g tern-jsx
 ### languages
 - Markdown
 - JavaScript, JSX
+- JSON
 
 ### others
 - git
