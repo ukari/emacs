@@ -14,7 +14,6 @@
 	    (tern-mode t)
 	    (auto-complete-mode)
 	    (tern-ac-setup)
-	    (tern-ac-complete)
 	    (message "js mode")))
 
 
