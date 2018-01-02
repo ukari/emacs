@@ -11,6 +11,7 @@
 	    (setq js2-basic-offset 2)
 	    (setq js2-strict-missing-semi-warning nil)
 	    (setq js2-strict-trailing-comma-warning nil)
+	    (setq js2-mode-show-strict-warnings nil)
 	    (paredit-everywhere)
 	    (tern-mode t)
 	    (auto-complete-mode)
