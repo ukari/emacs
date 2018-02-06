@@ -1,6 +1,7 @@
 # ukari no emacs config
 
 ## Dependencies
+- sbcl
 - tern
 - tern-jsx
 
@@ -13,9 +14,13 @@ npm install -g tern-jsx
 ## Supports
 
 ### languages
+- common lisp
 - Markdown
 - JavaScript, JSX
 - JSON
+
+## Config
+- set path for sbcl on `inferior-lisp-program` in `/lisp/init-common-lisp.el`, or `custom.el`
 
 ### others
 - git
