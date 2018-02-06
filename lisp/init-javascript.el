@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
+(require-package 'rjsx-mode)
 (require-package 'tern)
 (require-package 'tern-auto-complete)
 

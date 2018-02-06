@@ -2,14 +2,13 @@
 
 (require 'init-repository)
 
-(unless package-archive-contents
-  (package-refresh-contents))
+(setq package-refresh-contents-once (once #'package-refresh-contents))
 
 (defun require-package (package)
   (if (not (package-installed-p package))
-      (package-install package)
+      (progn
+	(funcall package-refresh-contents-once)
+	(package-install package))
     nil))
-
-(require-package 'rjsx-mode)
 
 (provide 'init-packages)

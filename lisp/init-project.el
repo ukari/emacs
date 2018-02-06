@@ -57,4 +57,21 @@
 	   (skip-buffer-in-action "*SPEEDBAR*" previous-buffer)
 	   (skip-buffer-in-action "*SPEEDBAR*" next-buffer)))
 
+(defun main-window ()
+  (let ((buffer (main-buffer)))
+    (car (seq-filter (lambda (x) (equal buffer (window-buffer x))) (window-list)))))
+
+(defun test ()
+  (interactive)
+  (find-file (buffer-file-name (main-buffer)))
+  (message (buffer-file-name (main-buffer)))
+  (message "access buffer 2"))
+
+;(add-hook 'speedbar-visiting-file-hook (lambda () (test)))
+
+;(remove-hook 'speedbar-before-visiting-file-hook 'sr-speedbar-before-visiting-file-hook)
+;(remove-hook 'speedbar-before-visiting-tag-hook 'sr-speedbar-before-visiting-tag-hook)
+;; todo
+(remove-hook 'speedbar-visiting-file-hook 'sr-speedbar-visiting-file-hook)
+;(remove-hook 'speedbar-visiting-tag-hook 'sr-speedbar-visiting-tag-hook)
 (provide 'init-project)

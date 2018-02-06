@@ -6,10 +6,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(require 'init-utils)
+
 (require 'init-repository)
 (require 'init-packages)
-
-(require 'init-utils)
 
 (require 'init-parentheses)
 (require 'init-theme)
