@@ -14,6 +14,7 @@
 (require 'init-parentheses)
 (require 'init-theme)
 
+(require 'init-common-lisp)
 (require 'init-json)
 (require 'init-javascript)
 (require 'init-markdown)
