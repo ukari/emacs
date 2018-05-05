@@ -6,6 +6,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(require 'init-editor)
 (require 'init-utils)
 
 (require 'init-repository)
