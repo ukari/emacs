@@ -21,6 +21,7 @@
 (require 'init-markdown)
 (require 'init-git)
 (require 'init-project)
+(require 'init-latex)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (if (file-exists-p custom-file)
