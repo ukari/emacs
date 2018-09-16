@@ -18,6 +18,7 @@ npm install -g tern-jsx
 - Markdown
 - JavaScript, JSX
 - JSON
+- LaTeX
 
 ## Config
 - set path for sbcl on `inferior-lisp-program` in `/lisp/init-common-lisp.el`, or `custom.el`
