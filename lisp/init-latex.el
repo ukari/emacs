@@ -2,6 +2,7 @@
 
 (require-package 'auctex)
 
-(setq tex-command-default "xelatex") ;; use xelatex for chinese
+;; use xelatex for chinese
+(setq-default TeX-engine 'xetex)
 
 (provide 'init-latex)
