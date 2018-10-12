@@ -11,6 +11,7 @@
 
 (require 'init-repository)
 (require 'init-packages)
+(require 'init-environment)
 
 (require 'init-parentheses)
 (require 'init-theme)
