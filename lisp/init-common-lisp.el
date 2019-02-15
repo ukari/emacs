@@ -3,6 +3,7 @@
 (require-package 'slime)
 
 (load (expand-file-name "~/.roswell/helper.el"))
+;; ref https://github.com/roswell/roswell/blob/3155030c0d2a1ccfddeb06b4f3c4f6c939c28b9c/lisp/emacs.ros#L36
 (setq inferior-lisp-program "ros -Q run")
 (setq slime-contribs '(slime-fancy))
 

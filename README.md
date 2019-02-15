@@ -5,6 +5,14 @@
 - tern
 - tern-jsx
 
+### roswell
+[install](https://github.com/roswell/roswell/wiki/Installation)
+
+install roswell's `helper.el` for emacs
+``` bash
+ros emacs
+```
+
 ### tern
 ``` bash
 npm install -g tern
@@ -15,6 +23,7 @@ npm install -g tern-jsx
 
 ### languages
 - common lisp
+- roswell
 - Markdown
 - JavaScript, JSX
 - JSON
