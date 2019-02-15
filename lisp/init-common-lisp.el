@@ -2,7 +2,8 @@
 
 (require-package 'slime)
 
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(load (expand-file-name "~/.roswell/helper.el"))
+(setq inferior-lisp-program "ros -Q run")
 (setq slime-contribs '(slime-fancy))
 
 ;; from: "ParEdit and SLIME REPL" in https://www.emacswiki.org/emacs/ParEdit

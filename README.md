@@ -1,7 +1,7 @@
 # ukari no emacs config
 
 ## Dependencies
-- sbcl
+- roswell
 - tern
 - tern-jsx
 
@@ -21,7 +21,7 @@ npm install -g tern-jsx
 - LaTeX
 
 ## Config
-- set path for sbcl on `inferior-lisp-program` in `/lisp/init-common-lisp.el`, or `custom.el`
+- set path for lisp environment on `inferior-lisp-program` in `/lisp/init-common-lisp.el`, or `custom.el`
 
 ### others
 - git
