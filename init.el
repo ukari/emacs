@@ -3,10 +3,6 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-
-(require 'init-editor)
 (require 'init-utils)
 
 (require 'init-repository)
@@ -15,6 +11,8 @@
 
 (require 'init-parentheses)
 (require 'init-theme)
+(require 'init-editor)
+(require 'init-appearance)
 
 (require 'init-common-lisp)
 (require 'init-json)

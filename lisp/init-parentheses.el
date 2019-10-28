@@ -19,6 +19,6 @@
   (interactive)
   (set (make-local-variable 'paredit-space-for-delimiter-predicates)
        '((lambda (endp delimiter) nil)))
-  (paredit-mode 1))
+  (paredit-mode t))
 
 (provide 'init-parentheses)
