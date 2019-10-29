@@ -4,6 +4,8 @@
 - roswell
 - tern
 - tern-jsx
+- Material Design Icons
+- Source Code Pro
 
 ### roswell
 [install](https://github.com/roswell/roswell/wiki/Installation)
