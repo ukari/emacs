@@ -6,6 +6,8 @@
 - tern-jsx
 - Material Design Icons
 - Source Code Pro
+- Noto Sans CJK SC
+- Noto Sans CJK JP
 
 ### roswell
 [install](https://github.com/roswell/roswell/wiki/Installation)
