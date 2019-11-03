@@ -18,7 +18,6 @@
 (defun init-fonts (frame)
   (when (display-graphic-p frame)
     (select-frame frame)
-    (message "init fonts")
     (let ((fontsize 10.5))
       (set-face-font 'default (concat "Source Code Pro-" (number-to-string fontsize)))
       (set-fontset-font (face-attribute 'default :fontset) '(#xf000 . #xffff)
@@ -33,6 +32,7 @@
                         (font-spec :family "Noto Sans CJK SC" :lang "zh" :size fontsize))
       (set-fontset-font (face-attribute 'default :fontset) 'kana
                         (font-spec :family "Noto Sans CJK JP" :size 10.5)))
+    (message "init fonts")
     (remove-hook 'after-make-frame-functions #'init-fonts)))
 
 (provide 'init-appearance)
