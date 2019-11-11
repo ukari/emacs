@@ -8,6 +8,7 @@
 (require 'init-repository)
 (require 'init-packages)
 (require 'init-environment)
+(require 'init-third-utils)
 
 (require 'init-parentheses)
 (require 'init-theme)
