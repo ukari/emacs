@@ -11,6 +11,8 @@
            (if initial-window-system
                (init-fonts (selected-frame))
              (on-frame #'init-fonts))
+           ;; fullscreen
+           (add-to-list 'default-frame-alist '(fullscreen . maximized))
            ;; transparent
            (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
            (add-to-list 'default-frame-alist '(alpha . (85 . 50)))))
