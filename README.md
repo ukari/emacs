@@ -41,6 +41,13 @@ npm install -g tern-jsx
 - monokai theme
 - speedbar
 
+### about git
+disable git's octal utf8 display to respect unicode
+
+``` shell
+git config --global core.quotepath off
+```
+
 ## Linux Service(emacs run as daemon)
 - get the file in `./emacs@.service`
 
