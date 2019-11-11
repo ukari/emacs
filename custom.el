@@ -25,5 +25,5 @@
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
  '(speedbar-verbosity-level 0)
- '(sr-speedbar-auto-refresh t)
+ '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side nil))
