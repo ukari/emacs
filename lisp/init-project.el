@@ -58,10 +58,8 @@
                   speedbar-directory-contents-alist))
 	  nl))))
 
-(setq path-separator (f-path-separator))
-
 (defun file-directory-split (path)
-  (split-string path path-separator))
+  (split-string path (f-path-separator)))
 
 (defun file-list-process (list)
   (setq list (split-string list "\n"))
