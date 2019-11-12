@@ -6,3 +6,4 @@ lisp/.tern-port
 network-security.data
 url/
 .#*
+*.swp
