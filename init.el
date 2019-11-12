@@ -8,7 +8,6 @@
 (require 'init-repository)
 (require 'init-packages)
 (require 'init-environment)
-(require 'init-third-utils)
 
 (require 'init-parentheses)
 (require 'init-theme)
@@ -22,6 +21,7 @@
 (require 'init-git)
 (require 'init-project)
 (require 'init-latex)
+(require 'init-package-lint)
 
 (require 'init-renpy)
 
