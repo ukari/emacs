@@ -21,7 +21,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(exec-path-from-shell tern tern-auto-complete sr-speedbar slime renpy rjsx-mode rainbow-delimiters package-lint paredit monokai-theme markdown-mode latex-preview-pane json-mode diff-hl auctex))
+   '(tern-auto-complete tern sr-speedbar speedbar-git-respect slime renpy rjsx-mode rainbow-delimiters package-lint paredit monokai-theme markdown-mode latex-preview-pane json-mode exec-path-from-shell diff-hl auctex))
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
  '(speedbar-verbosity-level 0)
