@@ -11,6 +11,14 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'slime-repl-mode-hook       #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'renpy-mode-hook            #'enable-paredit-mode)
+
+(defun renpy-mode-paredit-hook ()
+  (enable-paredit-mode)
+  (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
+               (lambda (endp delimiter)
+		 (and (or (eq major-mode 'renpy-mode))
+                      (not endp)))))
 
 (add-hook 'prog-mode-hook             #'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook       #'rainbow-delimiters-mode)
