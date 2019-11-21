@@ -3,7 +3,7 @@
 (require-package 'sr-speedbar)
 (require-package 'speedbar-git-respect)
 
-(require 'speedbar-git-respect)
+(speedbar-git-respect-mode t)
 
 (setq sr-speedbar-right-side nil)
 (setq sr-speedbar-width 32)
