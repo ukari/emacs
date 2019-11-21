@@ -33,7 +33,7 @@
       (set-fontset-font (face-attribute 'default :fontset) 'han
                         (font-spec :family "Noto Sans CJK SC" :lang "zh" :size fontsize))
       (set-fontset-font (face-attribute 'default :fontset) 'kana
-                        (font-spec :family "Noto Sans CJK JP" :size 10.5)))
+                        (font-spec :family "Noto Sans CJK JP" :size fontsize)))
     (message "init fonts")
     (remove-hook 'after-make-frame-functions #'init-fonts)))
 
