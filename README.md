@@ -58,7 +58,7 @@ git config --global core.quotepath off
 1. put this file to /etc/systemd/system/emacs@.service
 2. auto startup on `systemctl enable emacs@your_user_name.service`
 3. restart by `systemctl restart emacs@your_user_name.service`
-4. connect by `emacsclient -ec` or `emacsclient -t`
+4. connect by `emacsclient -c -s ${TMPDIR:-/tmp}/emacs$(id -u)/server` or `emacsclient -t -s ${TMPDIR:-/tmp}/emacs$(id -u)/server`
 
 ## Shortcuts
 - `F4` save & close other file buffers
