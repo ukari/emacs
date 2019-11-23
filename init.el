@@ -13,6 +13,7 @@
 (require 'init-theme)
 (require 'init-editor)
 (require 'init-appearance)
+(require 'init-color-visualizing)
 
 (require 'init-common-lisp)
 (require 'init-json)
