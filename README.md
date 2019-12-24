@@ -31,7 +31,6 @@ npm install -g tern-jsx
 ### others
 - git
 - monokai theme
-- speedbar
 
 ### about git
 disable git's octal utf8 display to respect unicode
