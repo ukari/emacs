@@ -8,8 +8,6 @@
 
 (defun require-package (package)
   (add-to-list 'selected-packages package)
-  (print package)
-  (print selected-packages)
   (if (not (package-installed-p package))
       (progn
 	(funcall package-refresh-contents-once)
@@ -18,8 +16,8 @@
 
 (on-init
  (lambda ()
-   (print selected-packages)
    (customize-save-variable 'package-selected-packages
-                            (sort selected-packages #'string>))))
+                            (sort selected-packages #'string>))
+   (message "regenerate package-selected-packages")))
 
 (provide 'init-packages)
