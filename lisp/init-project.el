@@ -11,6 +11,7 @@
 
 (global-set-key (kbd "<f5>") (lambda() (interactive) (sr-speedbar-toggle)))
 
+(setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
 
 (defun window-list-without-buffer (buffer-name)
@@ -49,17 +50,46 @@
 			       (save-and-kill-other-buffers)
 			       (kill-other-windows)))
 
-(defmacro skip-buffer-in-action (buffer-name action)
-  (let ((fn (make-symbol "fn")))
-    `(progn (setq ,fn (symbol-function (quote ,action)))
-	    (defun ,action ()
-	      (interactive)
-	      (funcall ,fn)
-	      (if (equal (buffer-name (current-buffer)) ,buffer-name)
-		  (funcall ,fn))))))
-(on-init (lambda ()
-	   (skip-buffer-in-action "*SPEEDBAR*" previous-buffer)
-	   (skip-buffer-in-action "*SPEEDBAR*" next-buffer)))
+;; (defmacro skip-buffer-in-action (buffer-name action)
+;;   (let ((fn (make-symbol "fn")))
+;;     `(progn (setq ,fn (symbol-function (quote ,action)))
+;; 	    (defun ,action ()
+;; 	      (interactive)
+;; 	      (funcall ,fn)
+;; 	      (if (equal (buffer-name (current-buffer)) ,buffer-name)
+;; 		  (funcall ,fn))))))
+;; (on-init (lambda ()
+;; 	   (skip-buffer-in-action "*SPEEDBAR*" previous-buffer)
+;; 	   (skip-buffer-in-action "*SPEEDBAR*" next-buffer)))
+
+(advice-add #'previous-buffer :around #'skip-specific-buffers)
+(advice-add #'next-buffer :around #'skip-specific-buffers)
+
+(defvar *skip-needing-buffers-list* (list "*SPEEDBAR*" "*Ilist*"))
+
+(defun skip-specific-buffers (origin &rest rest)
+  (let ((start-buffer (current-buffer)))
+    (skip-specific-buffers-inner origin rest start-buffer)))
+
+(defun skip-specific-buffers-inner (origin rest start-buffer)
+  (interactive)
+  (apply origin rest)
+  (let ((current-buffer (current-buffer)))
+    (if (and (member (buffer-name current-buffer) *skip-needing-buffers-list*)
+             (not (eq start-buffer current-buffer)))
+        (skip-specific-buffers-inner origin rest start-buffer))))
+
+;; https://emacs.stackexchange.com/questions/29670/how-to-prevent-some-new-buffers-from-splitting-the-window#comment45594_29670
+;; (pop-to-buffer (current-buffer)) !!!
+
+(setq pop-up-windows nil)
+
+;; (advice-add #'pop-to-buffer :around #'prevent-split)
+
+;; (defun prevent-split (origin &rest rest)
+;;   (interactive)
+;;   (let ((pop-up-windows nil))
+;;     (apply origin rest)))
 
 (defun main-window ()
   (let ((buffer (main-buffer)))

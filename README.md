@@ -1,21 +1,13 @@
 # ukari no emacs config
 
 ## Dependencies
-- roswell
+- sbcl
 - tern
 - tern-jsx
 - Material Design Icons
 - Source Code Pro
 - Noto Sans CJK SC
 - Noto Sans CJK JP
-
-### roswell
-[install](https://github.com/roswell/roswell/wiki/Installation)
-
-install roswell's `helper.el` for emacs
-``` bash
-ros emacs
-```
 
 ### tern
 ``` bash
@@ -27,14 +19,14 @@ npm install -g tern-jsx
 
 ### languages
 - common lisp
-- roswell
 - Markdown
 - JavaScript, JSX
 - JSON
 - LaTeX
+- fountain
 
 ## Config
-- set path for lisp environment on `inferior-lisp-program` in `/lisp/init-common-lisp.el`, or `custom.el`
+- set path for lisp environment on `inferior-lisp-program` in `/lisp/init-common-lisp.el`
 
 ### others
 - git
@@ -63,3 +55,4 @@ git config --global core.quotepath off
 ## Shortcuts
 - `F4` save & close other file buffers
 - `F5` toggle file tree (by speedbar)
+- `F6` toggle imenu list

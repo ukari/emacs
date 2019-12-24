@@ -7,6 +7,8 @@
            (menu-bar-mode 0)
            ;; disable scrollbar
            (scroll-bar-mode 0)
+           ;; disable auto resize window
+           (setq frame-inhibit-implied-resize t)
            ;; font
            (if initial-window-system
                (init-fonts (selected-frame))
