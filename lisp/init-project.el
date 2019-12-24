@@ -11,6 +11,16 @@
 
 (global-set-key (kbd "<f5>") (lambda() (interactive) (sr-speedbar-toggle)))
 
+(defun fix-speedbar-window (orign &rest rest)
+  (let ((result (apply orign rest))
+        (buffer (current-buffer)))
+    (set-buffer "*SPEEDBAR*")
+    (setq window-size-fixed t)
+    (set-buffer buffer)
+    result))
+
+(advice-add #'sr-speedbar-open :around #'fix-speedbar-window)
+
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
 
