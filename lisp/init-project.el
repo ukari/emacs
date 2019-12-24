@@ -49,6 +49,7 @@
   (delete-other-windows))
 
 (global-set-key (kbd "<f4>") (lambda() (interactive)
+                               (switch-to-buffer-other-window (main-buffer))
 			       (save-and-kill-other-buffers)
 			       (kill-other-windows)))
 
