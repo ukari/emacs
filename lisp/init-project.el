@@ -37,12 +37,12 @@
 
 (defun map-to-other-buffers (f)
   (mapc (lambda (b) (if (and (buffer-file-name b)
-			     (not (equal b (main-buffer))))
-			(funcall f b)))
-	(delq (if (buffer-file-name (current-buffer))
-		  (current-buffer)
-		(main-buffer))
-	      (buffer-list))))
+                             (not (equal b (main-buffer))))
+                        (funcall f b)))
+        (delq (if (buffer-file-name (current-buffer))
+                  (current-buffer)
+                (main-buffer))
+              (buffer-list))))
 
 (defun save-and-kill-other-buffers ()
   (interactive) 
@@ -51,7 +51,7 @@
     (map-to-other-buffers (lambda (b) (kill-buffer b)))
     (if (not (equal main-buffer (window-buffer (car (window-list-without-skipped-buffers)))))
         (progn (sr-speedbar-toggle)
-	       (sr-speedbar-toggle)))))
+               (sr-speedbar-toggle)))))
 
 (defun kill-other-windows()
   (if (member (buffer-name (current-buffer)) (window-list-without-skipped-buffers))
@@ -60,8 +60,8 @@
 
 (global-set-key (kbd "<f4>") (lambda() (interactive)
                                (switch-to-buffer-other-window (main-buffer))
-			       (save-and-kill-other-buffers)
-			       (kill-other-windows)))
+                               (save-and-kill-other-buffers)
+                               (kill-other-windows)))
 
 (advice-add #'previous-buffer :around #'skip-specific-buffers)
 (advice-add #'next-buffer :around #'skip-specific-buffers)

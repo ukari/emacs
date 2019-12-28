@@ -17,7 +17,7 @@
   (enable-paredit-mode)
   (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
                (lambda (endp delimiter)
-		 (and (or (eq major-mode 'renpy-mode))
+                 (and (or (eq major-mode 'renpy-mode))
                       (not endp)))))
 
 (add-hook 'prog-mode-hook             #'rainbow-delimiters-mode)
