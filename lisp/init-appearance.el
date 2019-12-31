@@ -13,6 +13,8 @@
            (if initial-window-system
                (init-fonts (selected-frame))
              (on-frame #'init-fonts))
+           ;; char table
+           (init-char-table)
            ;; fullscreen
            (add-to-list 'default-frame-alist '(fullscreen . maximized))
            ;; transparent
@@ -39,5 +41,9 @@
                         (font-spec :family "Noto Sans CJK JP" :size fontsize-cjk)))
     (message "init fonts")
     (remove-hook 'after-make-frame-functions #'init-fonts)))
+
+(defun init-char-table ()
+  (set-char-table-range char-width-table '(#x00 . #xFFFFF) 1)
+  (message "init char table"))
 
 (provide 'init-appearance)

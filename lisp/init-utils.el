@@ -9,7 +9,7 @@
 (defun once(fn)
   (let ((done nil))
     (lambda () (unless done
-		 (funcall fn)
-		 (setf done t)))))
+                 (funcall fn)
+                 (setf done t)))))
 
 (provide 'init-utils)

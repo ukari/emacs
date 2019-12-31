@@ -18,6 +18,7 @@
 (require 'init-parentheses)
 (require 'init-theme)
 (require 'init-editor)
+(require 'init-modeline)
 (require 'init-appearance)
 (require 'init-color-visualizing)
 (require 'init-olivetti)
