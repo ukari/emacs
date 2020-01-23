@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t -*-
+
 (require-package 'imenu-list)
 
 (global-set-key (kbd "<f6>") (lambda() (interactive) (imenu-list-smart-toggle)))

@@ -21,4 +21,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(tern-auto-complete tern sr-speedbar speedbar-git-respect slime rjsx-mode renpy rainbow-mode rainbow-delimiters paredit package-lint olivetti monokai-theme markdown-mode json-mode imenu-list fountain-mode exec-path-from-shell diff-hl auctex)))
+   '(tern-auto-complete tern sr-speedbar speedbar-git-respect slime rjsx-mode renpy rainbow-mode rainbow-delimiters paredit package-lint olivetti monokai-theme markdown-mode json-mode imenu-list haskell-mode fountain-mode exec-path-from-shell diff-hl auctex)))

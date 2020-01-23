@@ -26,6 +26,7 @@
 ;; language
 (require 'init-git)
 (require 'init-common-lisp)
+(require 'init-haskell)
 (require 'init-json)
 (require 'init-javascript)
 (require 'init-markdown)
