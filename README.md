@@ -8,6 +8,7 @@
 - Source Code Pro
 - Noto Sans CJK SC
 - Noto Sans CJK JP
+- haskell ide engine
 
 ### tern
 ``` bash

@@ -23,6 +23,9 @@
 (require 'init-color-visualizing)
 (require 'init-olivetti)
 
+;; lsp
+(require 'init-lsp)
+
 ;; language
 (require 'init-git)
 (require 'init-common-lisp)
