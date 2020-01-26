@@ -16,8 +16,6 @@
 ;; C-c C-l to load context
 ;; C-c C-t to infer type
 
-(require 'ghci-script-mode)
-
 (advice-add #'haskell-process-load-file :around #'interactive-haskell-window-resize)
 
 (defun interactive-haskell-window-resize (origin)
