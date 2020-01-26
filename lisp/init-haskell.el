@@ -16,11 +16,4 @@
 ;; C-c C-l to load context
 ;; C-c C-t to infer type
 
-(advice-add #'haskell-process-load-file :around #'interactive-haskell-window-resize)
-
-(defun interactive-haskell-window-resize (origin)
-  (funcall origin)
-  (let ((fixed-height 9))
-    (fit-window-to-buffer (car (window-list)) fixed-height fixed-height)))
-
 (provide 'init-haskell)
