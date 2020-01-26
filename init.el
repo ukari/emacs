@@ -25,7 +25,6 @@
 
 ;; coding
 (require 'init-flycheck)
-(require 'init-lsp)
 
 ;; language
 (require 'init-git)
