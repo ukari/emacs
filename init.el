@@ -23,7 +23,8 @@
 (require 'init-color-visualizing)
 (require 'init-olivetti)
 
-;; lsp
+;; coding
+(require 'init-flycheck)
 (require 'init-lsp)
 
 ;; language
