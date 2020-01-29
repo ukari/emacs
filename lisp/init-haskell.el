@@ -10,6 +10,7 @@
 (add-hook 'haskell-mode-hook #'flycheck-mode)
 (add-hook 'haskell-mode-hook #'interactive-haskell-mode)
 
+(add-hook 'haskell-mode-hook #'enable-paredit-mode)
 (add-hook 'haskell-interactive-mode-hook #'enable-paredit-mode)
 
 (setq haskell-process-path-ghci "stack")
