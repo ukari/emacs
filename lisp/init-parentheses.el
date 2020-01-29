@@ -3,6 +3,8 @@
 (require-package 'paredit)
 (require-package 'rainbow-delimiters)
 
+(require 'paredit)
+
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
@@ -28,5 +30,9 @@
   (set (make-local-variable 'paredit-space-for-delimiter-predicates)
        '((lambda (endp delimiter) nil)))
   (paredit-mode t))
+
+;; curly brace
+(define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
+(define-key paredit-mode-map (kbd "}") 'paredit-close-curly)
 
 (provide 'init-parentheses)
