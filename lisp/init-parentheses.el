@@ -35,13 +35,19 @@
 (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
 (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)
 
-;; disable backslash escape
+;; disable backslash escape for haskell
 (advice-add #'paredit-backslash :around #'paredit-backslash-disable)
 (advice-add #'paredit-in-string-escape-p :around #'paredit-in-string-escape-p-fixed)
 
-(defun paredit-backslash-disable (origin &rest rest)
-  (insert ?\\))
+(defvar *haskell-mode-list* '(haskell-interactive-mode haskell-mode))
 
-(defun paredit-in-string-escape-p-fixed (origin &rest rest))
+(defun paredit-backslash-disable (origin &rest rest)
+  (if (member major-mode *haskell-mode-list*)
+      (insert ?\\)
+    (apply origin rest)))
+
+(defun paredit-in-string-escape-p-fixed (origin &rest rest)
+  (unless (member major-mode *haskell-mode-list*)
+    (apply origin rest)))
 
 (provide 'init-parentheses)
