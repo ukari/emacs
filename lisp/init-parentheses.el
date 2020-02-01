@@ -35,4 +35,13 @@
 (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
 (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)
 
+;; disable backslash escape
+(advice-add #'paredit-backslash :around #'paredit-backslash-disable)
+(advice-add #'paredit-in-string-escape-p :around #'paredit-in-string-escape-p-fixed)
+
+(defun paredit-backslash-disable (origin &rest rest)
+  (insert ?\\))
+
+(defun paredit-in-string-escape-p-fixed (origin &rest rest))
+
 (provide 'init-parentheses)
