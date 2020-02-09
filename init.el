@@ -22,6 +22,7 @@
 (require 'init-appearance)
 (require 'init-color-visualizing)
 (require 'init-olivetti)
+(require 'init-auto-revert)
 
 ;; coding
 (require 'init-flycheck)
