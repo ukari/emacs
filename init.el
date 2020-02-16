@@ -32,6 +32,7 @@
 (require 'init-common-lisp)
 (require 'init-haskell)
 (require 'init-nix)
+(require 'init-yaml)
 (require 'init-json)
 (require 'init-javascript)
 (require 'init-markdown)

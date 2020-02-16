@@ -22,6 +22,7 @@ npm install -g tern-jsx
 - common lisp
 - haskell
 - nix
+- yaml
 - Markdown
 - JavaScript, JSX
 - JSON
