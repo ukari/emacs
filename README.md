@@ -21,6 +21,7 @@ npm install -g tern-jsx
 ### languages
 - common lisp
 - haskell
+- nix
 - Markdown
 - JavaScript, JSX
 - JSON
