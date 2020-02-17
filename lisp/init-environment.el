@@ -3,14 +3,7 @@
 (require-package 'exec-path-from-shell)
 
 (when (memq system-type '(gnu gnu/linux darwin))
-  (exec-path-from-shell-initialize))
-
-(defun add-path (item)
-  (setenv "PATH"
-          (concat item ":" (getenv "PATH"))))
-
-(defun push-path (item)
-  (setenv "PATH"
-          (concat (getenv "PATH") ":" item)))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs '("NIX_PATH")))
 
 (provide 'init-environment)
