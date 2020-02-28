@@ -1,10 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
-(defmacro on-init (fn)
-  `(add-hook 'after-init-hook ,fn))
-
-(defmacro on-frame (fn)
-  `(add-hook 'after-make-frame-functions ,fn))
+(defmacro on-init (&rest expr)
+  `(add-hook 'after-init-hook (lambda () ,@expr)))
 
 (defun once(fn)
   (let ((done nil))

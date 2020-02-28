@@ -50,6 +50,6 @@
 (if (file-exists-p custom-file)
     (load custom-file))
 
-(on-init (lambda () (message "init finished")))
+(on-init (message "init finished"))
 
 (provide 'init)

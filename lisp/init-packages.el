@@ -15,9 +15,8 @@
     nil))
 
 (on-init
- (lambda ()
-   (customize-save-variable 'package-selected-packages
-                            (sort selected-packages #'string>))
-   (message "regenerate package-selected-packages")))
+ (customize-save-variable 'package-selected-packages
+                          (sort selected-packages #'string>))
+ (message "regenerate package-selected-packages"))
 
 (provide 'init-packages)

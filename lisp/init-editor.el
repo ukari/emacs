@@ -5,8 +5,8 @@
 ;; charset
 (set-language-environment "UTF-8")
 
-(on-init (lambda ()
-           ;;default directory
-           (cd (getenv "HOME"))))
+(on-init
+ ;;default directory
+ (cd (getenv "HOME")))
 
 (provide 'init-editor)

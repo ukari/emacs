@@ -1,25 +1,25 @@
 ;; -*- lexical-binding: t -*-
 
-(on-init (lambda ()
-           ;; disable toolbar
-           (tool-bar-mode 0)
-           ;; disable menubar
-           (menu-bar-mode 0)
-           ;; disable scrollbar
-           (scroll-bar-mode 0)
-           ;; disable auto resize window
-           (setq frame-inhibit-implied-resize t)
-           ;; font
-           (if initial-window-system
-               (init-fonts (selected-frame))
-             (on-frame #'init-fonts))
-           ;; char table
-           (init-char-table)
-           ;; fullscreen
-           (add-to-list 'default-frame-alist '(fullscreen . maximized))
-           ;; transparent
-           (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-           (add-to-list 'default-frame-alist '(alpha . (85 . 50)))))
+(on-init
+ ;; disable toolbar
+ (tool-bar-mode 0)
+ ;; disable menubar
+ (menu-bar-mode 0)
+ ;; disable scrollbar
+ (scroll-bar-mode 0)
+ ;; disable auto resize window
+ (setq frame-inhibit-implied-resize t)
+ ;; font
+ (if initial-window-system
+     (init-fonts (selected-frame))
+   (add-hook 'after-make-frame-functions #'init-fonts))
+ ;; char table
+ (init-char-table)
+ ;; fullscreen
+ (add-to-list 'default-frame-alist '(fullscreen . maximized))
+ ;; transparent
+ (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+ (add-to-list 'default-frame-alist '(alpha . (85 . 50))))
 
 (defun init-fonts (frame)
   (when (display-graphic-p frame)
