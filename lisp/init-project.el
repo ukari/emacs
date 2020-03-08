@@ -84,8 +84,8 @@
 (defun skip-specific-buffers-when-kill (origin &rest rest)
   (apply origin rest)
   (if (member (buffer-name (current-buffer)) *skip-needing-buffers-list*)
-      (progn (buffer-name (current-buffer))
-             (next-buffer))))
+      (unless (window-dedicated-p)
+        (next-buffer))))
 
 ;; https://emacs.stackexchange.com/questions/29670/how-to-prevent-some-new-buffers-from-splitting-the-window#comment45594_29670
 ;; (pop-to-buffer (current-buffer)) !!!
