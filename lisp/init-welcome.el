@@ -6,8 +6,19 @@
 
 (defun server-execute-echo-area-silencer (origin &rest rest)
   (let ((inhibit-message t))
-    (apply origin rest))
+    (apply origin rest)))
+
+(add-hook 'focus-in-hook #'frame-welcome)
+
+(defun welcome ()
   (type-message welcome-message))
+
+(defun frame-welcome ()
+  (let ((cur (selected-frame)))
+    (unless (frame-parameter cur 'welcome-once)
+      (set-frame-parameter cur 'welcome-once (once #'welcome)))
+    (sit-for 0.24)
+    (funcall (frame-parameter cur 'welcome-once))))
 
 (defun type-message (mes &optional delay)
   (unless delay
