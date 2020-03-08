@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-(defvar welcome-message "Our typewriter has been wired in. Please remember to check the window bird. Have a happy journey~")
+(defvar welcome-message "Our typewriter has been wired in... Please remember to check the window bird. Driving on your high way~>")
 
 (advice-add #'server-execute :around #'server-execute-echo-area-silencer)
 
