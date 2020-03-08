@@ -8,4 +8,6 @@
 
 (setq imenu-list-position 'right)
 
+(add-hook 'imenu-list-major-mode-hook (lambda () (visual-line-mode 0)))
+
 (provide 'init-imenu-list)

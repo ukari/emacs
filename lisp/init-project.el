@@ -15,13 +15,13 @@
   (let ((result (apply orign rest))
         (buffer (current-buffer)))
     (set-buffer "*SPEEDBAR*")
-    (let ((inhibit-message t))
-      (toggle-word-wrap 0))
     (setq window-size-fixed t)
     (set-buffer buffer)
     result))
 
 (advice-add #'sr-speedbar-open :around #'fix-speedbar-window)
+
+(add-hook 'speedbar-mode-hook (lambda () (visual-line-mode 0)))
 
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
@@ -67,6 +67,7 @@
 
 (advice-add #'previous-buffer :around #'skip-specific-buffers)
 (advice-add #'next-buffer :around #'skip-specific-buffers)
+(advice-add #'kill-buffer :around #'skip-specific-buffers-when-kill)
 
 (defun skip-specific-buffers (origin &rest rest)
   (let ((start-buffer (current-buffer)))
@@ -79,6 +80,12 @@
     (if (and (member (buffer-name current-buffer) *skip-needing-buffers-list*)
              (not (eq start-buffer current-buffer)))
         (skip-specific-buffers-inner origin rest start-buffer))))
+
+(defun skip-specific-buffers-when-kill (origin &rest rest)
+  (apply origin rest)
+  (if (member (buffer-name (current-buffer)) *skip-needing-buffers-list*)
+      (progn (buffer-name (current-buffer))
+             (next-buffer))))
 
 ;; https://emacs.stackexchange.com/questions/29670/how-to-prevent-some-new-buffers-from-splitting-the-window#comment45594_29670
 ;; (pop-to-buffer (current-buffer)) !!!
