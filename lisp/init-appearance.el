@@ -48,4 +48,10 @@
   (set-char-table-range char-width-table '(#x00 . #xFFFFF) 1)
   (message "init char table"))
 
+(advice-add #'server-execute :around #'server-execute-echo-area-silencer)
+
+(defun server-execute-echo-area-silencer (origin &rest rest)
+  (let ((inhibit-message t))
+    (apply origin rest)))
+
 (provide 'init-appearance)
