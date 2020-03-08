@@ -1,6 +1,8 @@
 ;; -*- lexical-binding: t -*-
 
 (on-init
+ ;; visual line
+ (global-visual-line-mode 1)
  ;; disable toolbar
  (tool-bar-mode 0)
  ;; disable menubar

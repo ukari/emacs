@@ -15,6 +15,8 @@
   (let ((result (apply orign rest))
         (buffer (current-buffer)))
     (set-buffer "*SPEEDBAR*")
+    (let ((inhibit-message t))
+      (toggle-word-wrap 0))
     (setq window-size-fixed t)
     (set-buffer buffer)
     result))
