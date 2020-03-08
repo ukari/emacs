@@ -21,7 +21,11 @@
  (add-to-list 'default-frame-alist '(fullscreen . maximized))
  ;; transparent
  (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
- (add-to-list 'default-frame-alist '(alpha . (85 . 50))))
+ (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ ;; default color, sea water
+ (set-face-attribute 'default nil :foreground "#328265")
+ ;; minibuffer prompt color
+ (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36"))
 
 (defun init-fonts (frame)
   (when (display-graphic-p frame)
@@ -47,11 +51,5 @@
 (defun init-char-table ()
   (set-char-table-range char-width-table '(#x00 . #xFFFFF) 1)
   (message "init char table"))
-
-(advice-add #'server-execute :around #'server-execute-echo-area-silencer)
-
-(defun server-execute-echo-area-silencer (origin &rest rest)
-  (let ((inhibit-message t))
-    (apply origin rest)))
 
 (provide 'init-appearance)

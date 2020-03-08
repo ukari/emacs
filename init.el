@@ -43,6 +43,7 @@
 ;; hub
 (require 'init-project)
 (require 'init-imenu-list)
+(require 'init-welcome)
 
 ;; tool
 (require 'init-renpy)
