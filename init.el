@@ -54,4 +54,6 @@
 
 (on-init (message "init finished"))
 
+(call-on-init)
+
 (provide 'init)
