@@ -25,7 +25,9 @@
  ;; default color, sea water
  (set-face-attribute 'default nil :foreground "#328265")
  ;; minibuffer prompt color
- (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36"))
+ (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36")
+ ;; widget-field
+ (set-face-attribute 'widget-field nil :background "#663333"))
 
 (defun init-fonts (frame)
   (when (display-graphic-p frame)
