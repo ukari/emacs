@@ -42,12 +42,11 @@
 (defun type-message (mes &optional delay)
   (unless delay
     (setf delay 0.01))
-  (let ((after 0))
-    (let ((message-log-max nil)
-          (iter (message-generator mes)))
-      (iter-do (x iter)
-        (setf after (+ after delay))
-        (run-at-time after nil ((lambda (fixx) (lambda () (message fixx))) x))))
+  (let ((after 0)
+        (iter (message-generator mes)))
+    (iter-do (x iter)
+      (setf after (+ after delay))
+      (run-at-time after nil ((lambda (fixx) (lambda () (let ((message-log-max nil)) (message fixx)))) x)))
     (run-at-time (+ after delay) nil (lambda () (message mes)))))
 
 (provide 'init-welcome)
