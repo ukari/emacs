@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t -*-
+(require 'generator)
 
 (setq inhibit-splash-screen t)
 
@@ -19,8 +20,18 @@
     (apply origin rest)))
 
 (defun welcome ()
-  (sit-for 0.24)
-  (type-message welcome-message))
+  (run-at-time 0.24 nil (lambda () (type-message welcome-message)))
+  t)
+
+(iter-defun message-generator (mes)
+  (let ((chars (split-string mes ""))
+        (acc)
+        (cur))
+    (while chars
+      (setf cur (car chars))
+      (setf acc (concat acc cur))
+      (setf chars (cdr chars))
+      (iter-yield acc))))
 
 (defun frame-welcome ()
   (let ((cur (selected-frame)))
@@ -30,16 +41,13 @@
 
 (defun type-message (mes &optional delay)
   (unless delay
-    (setq delay 0.01))
-  (let ((message-log-max nil)
-        (acc))
-    (seq-map
-     (lambda (char)
-       (setf acc (concat acc char))
-       (sit-for delay)
-       (message acc))
-     (split-string mes "")))
-  (sit-for delay)
-  (message mes))
+    (setf delay 0.01))
+  (let ((after 0))
+    (let ((message-log-max nil)
+          (iter (message-generator mes)))
+      (iter-do (x iter)
+        (setf after (+ after delay))
+        (run-at-time after nil ((lambda (fixx) (lambda () (message fixx))) x))))
+    (run-at-time (+ after delay) nil (lambda () (message mes)))))
 
 (provide 'init-welcome)
