@@ -27,7 +27,11 @@
  ;; minibuffer prompt color
  (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36")
  ;; widget-field
- (set-face-attribute 'widget-field nil :background "#663333"))
+ (require 'wid-edit)
+ (set-face-attribute 'widget-field nil :background "#663333")
+ ;; buffer-menu group
+ (setq mouse-buffer-menu-maxlen 10)
+ (setq mouse-buffer-menu-mode-mult 0))
 
 (defun init-fonts (frame)
   (when (display-graphic-p frame)
