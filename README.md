@@ -9,6 +9,7 @@
 - Noto Sans CJK SC
 - Noto Sans CJK JP
 - stack
+- glslangValidator
 
 ### tern
 ``` bash
@@ -21,6 +22,7 @@ npm install -g tern-jsx
 ### languages
 - common lisp
 - haskell
+- glsl
 - nix
 - yaml
 - Markdown

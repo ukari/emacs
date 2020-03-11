@@ -32,6 +32,7 @@
 (require 'init-git)
 (require 'init-common-lisp)
 (require 'init-haskell)
+(require 'init-glsl)
 (require 'init-nix)
 (require 'init-yaml)
 (require 'init-json)
