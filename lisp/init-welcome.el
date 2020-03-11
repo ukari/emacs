@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t -*-
+
 (require 'generator)
 
 (setq inhibit-splash-screen t)
