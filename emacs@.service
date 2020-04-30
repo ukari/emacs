@@ -6,8 +6,9 @@ Type=forking
 ExecStart=/usr/bin/env XMODIFIERS="@im=fcitx" /usr/bin/emacs --daemon
 ExecStop=/usr/bin/emacsclient --eval "(progn (setq kill-emacs-hook 'nil) (kill-emacs))"
 Restart=always
+RestartSec=5s
 User=%i
-WorkingDirectory=%h
+WorkingDirectory=~
 
 [Install]
 WantedBy=multi-user.target
