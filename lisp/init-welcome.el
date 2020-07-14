@@ -42,7 +42,7 @@
 
 (defun type-message (mes &optional delay)
   (unless delay
-    (setf delay 0.01))
+    (setf delay 0.019))
   (let ((after 0)
         (iter (message-generator mes)))
     (iter-do (x iter)
