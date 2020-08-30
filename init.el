@@ -25,10 +25,16 @@
 (require 'init-olivetti)
 (require 'init-auto-revert)
 
+;; ;; hub
+(require 'init-project)
+(require 'init-imenu-list)
+(require 'init-welcome)
+
 ;; coding
 (require 'init-flycheck)
 
-;; language
+;;language
+(require 'init-elisp)
 (require 'init-git)
 (require 'init-common-lisp)
 (require 'init-haskell)
@@ -40,11 +46,6 @@
 (require 'init-markdown)
 (require 'init-latex)
 (require 'init-fountain)
-
-;; hub
-(require 'init-project)
-(require 'init-imenu-list)
-(require 'init-welcome)
 
 ;; tool
 (require 'init-renpy)

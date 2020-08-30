@@ -20,8 +20,8 @@
  ;; fullscreen
  (add-to-list 'default-frame-alist '(fullscreen . maximized))
  ;; transparent
- (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
- (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ (set-frame-parameter (selected-frame) 'alpha '(80 . 80))
+ (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
  ;; default color, sea water
  (set-face-attribute 'default nil :foreground "#328265")
  ;; minibuffer prompt color
@@ -39,7 +39,7 @@
     (let ((fontsize 10.5)
           (fontsize-cjk 12))
       (set-face-font 'default (concat "Source Code Pro-" (number-to-string fontsize)))
-      (set-fontset-font (face-attribute 'default :fontset) '(#xf000 . #xffff)
+      (set-fontset-font (face-attribute 'default :fontset) '(#xf000 . #xfffff)
                         (font-spec :family "Material Design Icons" :size fontsize))
       (set-fontset-font (face-attribute 'default :fontset) 'cjk-misc
                         (font-spec :family "Noto Sans CJK JP" :lang "ja" :size fontsize-cjk))

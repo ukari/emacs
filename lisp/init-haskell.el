@@ -16,6 +16,11 @@
 (setq haskell-process-path-ghci "stack")
 (setq haskell-process-args-ghci '("ghci"))
 
+(advice-add #'haskell-process-load-file :around #'load-haskell-context-wrapper)
+
+(defun load-haskell-context-wrapper (origin &rest rest)
+  (window-manager (lambda () (apply origin rest))))
+
 ;; C-c C-l to load context
 ;; C-c C-t to infer type
 
