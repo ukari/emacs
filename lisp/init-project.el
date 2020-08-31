@@ -3,6 +3,8 @@
 (require-package 'sr-speedbar)
 (require-package 'speedbar-git-respect)
 
+(require 'cl-lib)
+
 (speedbar-git-respect-mode t)
 
 (setq sr-speedbar-right-side nil)
@@ -143,10 +145,11 @@
         (current-buffer (current-buffer))
         (mode-buffer nil)
         (result nil))
-    (flet ((pop-to-buffer (buffer-or-name &optional action norecord)
-                          (setf mode-buffer buffer-or-name)
-                          nil)
-           (split-window-vertically (&optional size)))
+    (cl-letf (((symbol-function 'pop-to-buffer)
+               (lambda (buffer-or-name &optional action norecord)
+                 (setf mode-buffer buffer-or-name)
+                 nil))
+              ((symbol-function 'split-window-vertically) (lambda (&optional size))))
       (setf result (funcall mode-startup))
       (if mode-buffer
           (progn
