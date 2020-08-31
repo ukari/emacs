@@ -40,7 +40,7 @@
   (without-skipped-buffer-p (window-buffer window)))
 
 (defun window-list-without-skipped-buffers ()
-  (seq-filter #'window-without-skipped-buffer-p (window-list)))
+  (seq-filter #'window-without-skipped-buffer-p (window-list (selected-frame))))
 
 (defun main-buffer ()
   (let ((current-buffer (current-buffer)))
@@ -111,9 +111,9 @@
     (car (seq-filter (lambda (x) (equal buffer (window-buffer x))) (window-list)))))
 
 (defun windows-by-last-selected-without-skipped ()
-  (let ((orderlist (seq-filter #'get-buffer-window (seq-filter #'without-skipped-buffer-p (buffer-list (selected-frame))))))
-    (seq-sort (lambda (x y) (< (seq-position orderlist (window-buffer x))
-                               (seq-position orderlist (window-buffer y))))
+  (let ((windows (window-list (selected-frame))))
+    (seq-sort (lambda (x y) (> (window-use-time x)
+                               (window-use-time y)))
               (window-list-without-skipped-buffers))))
 
 (defun buffer-window-count (buffer)
