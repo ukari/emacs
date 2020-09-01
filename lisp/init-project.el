@@ -42,6 +42,9 @@
 (defun window-list-without-skipped-buffers ()
   (seq-filter #'window-without-skipped-buffer-p (window-list (selected-frame))))
 
+(defun window-list-without-dedicated ()
+  (seq-filter (lambda (x) (not (window-dedicated-p x))) (window-list (selected-frame))))
+
 (defun main-buffer ()
   (let ((current-buffer (current-buffer)))
     (if (buffer-file-name current-buffer)
@@ -114,7 +117,7 @@
   (let ((windows (window-list (selected-frame))))
     (seq-sort (lambda (x y) (> (window-use-time x)
                                (window-use-time y)))
-              (window-list-without-skipped-buffers))))
+              (window-list-without-dedicated))))
 
 (defun buffer-window-count (buffer)
   (let ((window (get-buffer-window buffer))
