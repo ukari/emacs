@@ -77,8 +77,7 @@
 (global-set-key (kbd "<f4>") (lambda() (interactive)
                                (switch-to-buffer-other-window (main-buffer))
                                (save-and-kill-other-buffers)
-                               (kill-other-windows)
-                               (other-window-first)))
+                               (kill-other-windows)))
 
 (advice-add #'previous-buffer :around #'skip-specific-buffers)
 (advice-add #'next-buffer :around #'skip-specific-buffers)
