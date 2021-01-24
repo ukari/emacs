@@ -7,6 +7,15 @@
 ;; (prefer-coding-system 'gb18030)
 ;; (prefer-coding-system 'utf-8)
 
+(require-package 'unicad)
+(unicad-mode)
+
+(advice-add #'overwrite-mode :around #'overwrite-mode-disable)
+
+(defun overwrite-mode-disable (origin &rest rest)
+  (message "overwrite-mode is not allow")
+  nil)
+
 (on-init
  ;;default directory
  (cd (getenv "HOME")))

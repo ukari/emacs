@@ -21,4 +21,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaml-mode tern-auto-complete tern sr-speedbar speedbar-git-respect slime rjsx-mode renpy rainbow-mode rainbow-delimiters paredit package-lint olivetti nix-mode monokai-theme markdown-mode json-mode imenu-list haskell-mode glsl-mode fountain-mode flycheck-package flycheck-haskell flycheck exec-path-from-shell diminish diff-hl auctex)))
+   '(yaml-mode unicad tern-auto-complete tern sr-speedbar speedbar-git-respect slime rjsx-mode renpy rainbow-mode rainbow-delimiters paredit package-lint olivetti nix-mode monokai-theme markdown-mode json-mode imenu-list haskell-mode glsl-mode fountain-mode flycheck-package flycheck-haskell flycheck exec-path-from-shell diminish diff-hl auctex)))
