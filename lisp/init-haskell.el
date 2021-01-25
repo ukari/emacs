@@ -21,6 +21,10 @@
 (defun load-haskell-context-wrapper (origin &rest rest)
   (window-manager (lambda () (apply origin rest))))
 
+;; highlight glsl for haskell quasi-quote
+(seq-map (lambda (x) (add-to-list 'haskell-font-lock-quasi-quote-modes (cons x 'glsl-mode)))
+         '("glsl" "comp" "frag" "geom" "tesc" "tese" "vert"))
+
 ;; C-c C-l to load context
 ;; C-c C-t to infer type
 
