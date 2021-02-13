@@ -2,20 +2,12 @@
 
 ## Dependencies
 - sbcl
-- tern
-- tern-jsx
 - Material Design Icons
 - Source Code Pro
 - Noto Sans CJK SC
 - Noto Sans CJK JP
 - stack
 - glslangValidator
-
-### tern
-``` bash
-npm install -g tern
-npm install -g tern-jsx
-```
 
 ## Supports
 
@@ -26,9 +18,7 @@ npm install -g tern-jsx
 - nix
 - yaml
 - Markdown
-- JavaScript, JSX
 - JSON
-- LaTeX
 - fountain
 
 ## Config

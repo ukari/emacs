@@ -42,9 +42,9 @@
 (require 'init-nix)
 (require 'init-yaml)
 (require 'init-json)
-(require 'init-javascript)
+;;(require 'init-javascript)
 (require 'init-markdown)
-(require 'init-latex)
+;;(require 'init-latex)
 (require 'init-fountain)
 
 ;; tool
