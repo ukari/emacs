@@ -23,7 +23,10 @@
 
 ;; highlight glsl for haskell quasi-quote
 (seq-map (lambda (x) (add-to-list 'haskell-font-lock-quasi-quote-modes (cons x 'glsl-mode)))
-         '("glsl" "comp" "frag" "geom" "tesc" "tese" "vert"))
+         '("glsl"
+           "vert" "frag" "geom" "tesc" "tese" "comp"
+           "rgen" "rint" "rahit" "rchit" "rmiss" "rcall"
+           "task" "mesh"))
 
 ;; C-c C-l to load context
 ;; C-c C-t to infer type
