@@ -18,6 +18,7 @@
 - nix
 - yaml
 - Markdown
+- ReST
 - JSON
 - fountain
 

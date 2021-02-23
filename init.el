@@ -44,6 +44,7 @@
 (require 'init-json)
 ;;(require 'init-javascript)
 (require 'init-markdown)
+(require 'init-rst)
 ;;(require 'init-latex)
 (require 'init-fountain)
 
