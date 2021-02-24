@@ -25,7 +25,7 @@
 (require 'init-olivetti)
 (require 'init-auto-revert)
 
-;; ;; hub
+;; hub
 (require 'init-project)
 (require 'init-imenu-list)
 (require 'init-welcome)
@@ -33,7 +33,7 @@
 ;; coding
 (require 'init-flycheck)
 
-;;language
+;; language
 (require 'init-elisp)
 (require 'init-git)
 (require 'init-common-lisp)
@@ -42,14 +42,9 @@
 (require 'init-nix)
 (require 'init-yaml)
 (require 'init-json)
-;;(require 'init-javascript)
 (require 'init-markdown)
 (require 'init-rst)
-;;(require 'init-latex)
 (require 'init-fountain)
-
-;; tool
-(require 'init-renpy)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (if (file-exists-p custom-file)

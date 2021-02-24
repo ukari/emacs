@@ -15,6 +15,7 @@
     nil))
 
 (on-init
+ ;; todo check same
  (customize-save-variable 'package-selected-packages
                           (sort selected-packages #'string>))
  (message "regenerate package-selected-packages"))

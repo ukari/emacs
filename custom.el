@@ -21,4 +21,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaml-mode unicad sr-speedbar speedbar-git-respect slime renpy rainbow-mode rainbow-delimiters paredit package-lint olivetti nix-mode monokai-theme markdown-mode json-mode imenu-list haskell-mode glsl-mode fountain-mode flycheck-package flycheck-haskell flycheck exec-path-from-shell diminish diff-hl)))
+   '(yaml-mode sr-speedbar speedbar-git-respect slime package-lint nix-mode markdown-mode json-mode imenu-list haskell-mode glsl-mode fountain-mode flycheck-package flycheck-haskell flycheck exec-path-from-shell diff-hl)))
