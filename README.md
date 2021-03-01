@@ -13,6 +13,7 @@
 
 ### languages
 - common lisp
+- elisp
 - haskell
 - glsl
 - nix
