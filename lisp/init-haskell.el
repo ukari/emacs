@@ -21,6 +21,30 @@
 (defun load-haskell-context-wrapper (origin &rest rest)
   (window-manager (lambda () (apply origin rest))))
 
+;; revert buffer when haskell process reload due to cabal file changed
+;; https://github.com/haskell/haskell-mode/blob/e72677668f5fc7cc148008e885a0f256e245dd43/haskell-load.el#L33
+
+(advice-add #'haskell-process-look-config-changes :around #'haskell-process-look-config-changes-wrapper)
+
+(defun haskell-process-look-config-changes-wrapper (origin &rest rest)
+  (advice-add #'y-or-n-p :around #'y-or-n-p-wrapper)
+  (unwind-protect
+      (apply origin rest)
+    (advice-remove #'y-or-n-p #'y-or-n-p-wrapper)))
+
+(defun y-or-n-p-wrapper (origin prompt &rest rest)
+  (let ((res (apply origin (cons prompt rest))))
+    (when (and (equal prompt "Cabal file changed. Restart GHCi process? ")
+               res)
+      (advice-add #'haskell-process-start :around #'haskell-process-start-wrapper))
+    res))
+
+(defun haskell-process-start-wrapper (origin &rest rest)
+  (unwind-protect
+      (apply origin rest)
+    (revert-buffer t t)
+    (advice-remove #'haskell-process-start #'haskell-process-start-wrapper)))
+
 ;; highlight glsl for haskell quasi-quote
 (seq-map (lambda (x) (add-to-list 'haskell-font-lock-quasi-quote-modes (cons x 'glsl-mode)))
          '("glsl"
