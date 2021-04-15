@@ -150,8 +150,8 @@
  `(line-number-current-line ((t (:foreground ,ground-foreground :background ,ground-background :underline t :inherit default))))
 
  ;; isearch
- `(isearch ((t (:foreground ,ground-foreground :background ,ground-foreground :inherit region))))
- `(isearch-fail ((t (:foreground ,ground-purple :background ,ground-foreground :inherit isearch))))
+ `(isearch ((t (:foreground ,ground-background :background "#4b96e0" :inherit region))))
+ `(isearch-fail ((t (:foreground ,ground-background :background ,ground-fushsia :inherit isearch))))
 
  ;; widget
  '(custom-button-unraised ((t (:inherit underline))))
