@@ -29,6 +29,7 @@
 ### others
 - git
 - ground theme
+- ignore `.Xresource`
 
 ### about git
 disable git's octal utf8 display to respect unicode

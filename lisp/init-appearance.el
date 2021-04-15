@@ -11,6 +11,8 @@
  (scroll-bar-mode 0)
  ;; disable auto resize window
  (setq frame-inhibit-implied-resize t)
+ ;; ignore .Xresource
+ (setq inhibit-x-resources t)
  ;; font
  (if initial-window-system
      (init-fonts (selected-frame))
