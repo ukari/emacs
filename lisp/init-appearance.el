@@ -20,15 +20,15 @@
  ;; fullscreen
  (add-to-list 'default-frame-alist '(fullscreen . maximized))
  ;; transparent
- (set-frame-parameter (selected-frame) 'alpha '(80 . 80))
- (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
+ ;; (set-frame-parameter (selected-frame) 'alpha '(80 . 80))
+ ;; (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
  ;; default color, sea water
- (set-face-attribute 'default nil :foreground "#328265")
- ;; minibuffer prompt color
- (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36")
- ;; widget-field
- (require 'wid-edit)
- (set-face-attribute 'widget-field nil :background "#663333")
+ ;; (set-face-attribute 'default nil :foreground "#328265")
+ ;; ;; minibuffer prompt color
+ ;; (set-face-attribute 'minibuffer-prompt nil :foreground "#e53e36")
+ ;; ;; widget-field
+ ;; (require 'wid-edit)
+ ;; (set-face-attribute 'widget-field nil :background "#663333")
  ;; buffer-menu group
  (setq mouse-buffer-menu-maxlen 10)
  (setq mouse-buffer-menu-mode-mult 0))
