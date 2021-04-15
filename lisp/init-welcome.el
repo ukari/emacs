@@ -12,9 +12,6 @@
 ;; 3. non daemon mode, graphics
 ;; 4. non daemon mode, non graphics
 
-;; situation 1, 3
-;;(add-hook 'focus-in-hook #'frame-welcome)
-
 (if (daemonp)
     (progn
       ;; inhibt default startup message in situation 1
@@ -34,7 +31,6 @@
     (apply origin rest)))
 
 (defun server-execute-welcome-wrapper (origin &rest rest)
-  (print "here")
   (unwind-protect (apply origin rest)
     (welcome)))
 
@@ -60,12 +56,6 @@
       (setf acc (concat acc cur))
       (setf chars (cdr chars))
       (iter-yield acc))))
-
-;; (defun frame-welcome ()
-;;   (let ((cur (selected-frame)))
-;;     (unless (frame-parameter cur 'welcomed)
-;;       (set-frame-parameter cur 'welcomed t)
-;;       (when window-system (welcome)))))
 
 (defun type-message (mes &optional delay)
   (unless delay
