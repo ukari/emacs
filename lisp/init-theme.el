@@ -4,8 +4,8 @@
 
 (on-init
  (message "Custom variable custom-safe-themes check finished.")
- (unless custom-safe-themes
-           (customize-save-variable 'custom-safe-themes nil)
-           (message "Clear custom-safe-themes.")))
+ (when custom-safe-themes
+   (customize-save-variable 'custom-safe-themes nil)
+   (message "Clear custom-safe-themes.")))
 
 (provide 'init-theme)
