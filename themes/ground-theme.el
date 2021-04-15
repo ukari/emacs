@@ -129,7 +129,7 @@
  `(font-lock-function-name-face ((t (:foreground ,ground-maroon))))
  `(font-lock-keyword-face ((t (:foreground ,ground-red))))
  `(font-lock-negation-char-face ((t (:weight bold :foreground ,ground-red))))
- `(font-lock-preprocessor-face ((t (:inherit (:face font-lock-builtin-face)))))
+ `(font-lock-preprocessor-face ((t (:inherit font-lock-builtin-face))))
  `(font-lock-regexp-grouping-backslash ((t (:weight normal :foreground ,ground-green))))
  `(font-lock-regexp-grouping-construct ((t (:weight normal :foreground ,ground-yellow))))
  `(font-lock-string-face ((t (:foreground ,ground-olive))))
@@ -154,15 +154,15 @@
  `(isearch-fail ((t (:foreground ,ground-background :background ,ground-fushsia :inherit isearch))))
 
  ;; widget
- '(custom-button-unraised ((t (:inherit underline))))
+ `(custom-button-unraised ((t (:inherit underline))))
  `(custom-group-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
- '(custom-face-tag ((t (:height 1.0 :weight bold :foreground "hot pink" :inherit default))))
+ `(custom-face-tag ((t (:height 1.0 :weight bold :foreground "hot pink" :inherit default))))
  `(custom-variable-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
- '(widget-field ((t (:box (:line-width (1 . -1) :color "#D9004A") :background "#F57878" :extend t))))
+ `(widget-field ((t (:box (:line-width (1 . -1) :color "#D9004A") :background "#F57878" :extend t))))
  `(help-key-binding ((t (:box (:line-width (1 . -1) :color "grey35") :foreground "darkblue" :background "grey19"))))
 
  ;; mini buffer
- '(minibuffer-prompt ((t (:foreground "#E53E36"))))
+ `(minibuffer-prompt ((t (:foreground "#E53E36"))))
 
  ;; mode line
  `(mode-line-buffer-id ((t :weight normal :foreground ,ground-fushsia)))
@@ -170,13 +170,13 @@
  `(mode-line-inactive ((t (:box nil :foreground ,ground-grey :background ,ground-background))))
 
  ;; markdown
- '(markdown-code-face ((t (:inherit default :foreground "#B029B0"))))
+ `(markdown-code-face ((t (:inherit default :foreground "#B029B0"))))
  `(markdown-header-face ((t (:foreground ,ground-olive))))
- '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.0))))
- '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.0))))
- '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.0))))
- '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.0))))
- '(markdown-inline-code-face ((t (:inherit font-lock-constant-face :foreground "#B029B0"))))
+ `(markdown-header-face-1 ((t (:height 1.0 :inherit markdown-header-face))))
+ `(markdown-header-face-2 ((t (:height 1.0 :inherit markdown-header-face))))
+ `(markdown-header-face-3 ((t (:height 1.0 :inherit markdown-header-face))))
+ `(markdown-header-face-4 ((t (:height 1.0 :inherit markdown-header-face))))
+ `(markdown-inline-code-face ((t (:foreground "#B029B0" :inherit font-lock-constant-face))))
 
  ;; speedbar
  `(speedbar-button-face ((t (:foreground ,ground-fushsia :inherit default))))
