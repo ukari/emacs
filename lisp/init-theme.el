@@ -3,9 +3,9 @@
 (on-init (load-theme 'ground t))
 
 (on-init
- (message "custom variable custom-safe-themes check finished")
+ (message "Custom variable custom-safe-themes check finished.")
  (unless custom-safe-themes
            (customize-save-variable 'custom-safe-themes nil)
-           (message "clear custom-safe-themes")))
+           (message "Clear custom-safe-themes.")))
 
 (provide 'init-theme)
