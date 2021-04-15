@@ -47,11 +47,11 @@
                         (font-spec :family "Noto Sans CJK SC" :lang "zh" :size fontsize-cjk))
       (set-fontset-font (face-attribute 'default :fontset) 'kana
                         (font-spec :family "Noto Sans CJK JP" :size fontsize-cjk)))
-    (message "init fonts")
+    (message "Init fonts.")
     (remove-hook 'after-make-frame-functions #'init-fonts)))
 
 (defun init-char-table ()
   (set-char-table-range char-width-table '(#x00 . #xFFFFF) 1)
-  (message "init char table"))
+  (message "Init char table."))
 
 (provide 'init-appearance)

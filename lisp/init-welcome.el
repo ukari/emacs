@@ -17,16 +17,15 @@
       ;; inhibt default startup message in situation 1
       (advice-add #'server-execute :around #'server-execute-echo-area-silencer)
       ;; situation 1, 2
-      (advice-add #'server-execute :around #'server-execute-welcome-wrapper)
-      )
+      (advice-add #'server-execute :around #'server-execute-welcome-wrapper))
   (progn
     ;; inhibt default startup message in situation 3
     (advice-add #'display-startup-echo-area-message :around #'startup-echo-area-message-silencer)
     ;; situation 3, 4
-    (advice-add #'display-startup-echo-area-message :around #'non-daemon-welcome-wrapper)
-    ))
+    (advice-add #'display-startup-echo-area-message :around #'non-daemon-welcome-wrapper)))
 
 (defun server-execute-echo-area-silencer (origin &rest rest)
+  (advice-remove #'server-execute #'server-execute-welcome-wrapper)
   (let ((inhibit-message t))
     (apply origin rest)))
 
