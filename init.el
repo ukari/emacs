@@ -51,7 +51,7 @@
 (if (file-exists-p custom-file)
     (load custom-file))
 
-(on-init (message "init finished"))
+(on-init (message "Init finished."))
 
 (call-on-init)
 
