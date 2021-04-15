@@ -18,6 +18,7 @@
         (buffer (current-buffer)))
     (set-buffer "*SPEEDBAR*")
     (setq window-size-fixed t)
+    (speedbar-refresh)
     (set-buffer buffer)
     result))
 
