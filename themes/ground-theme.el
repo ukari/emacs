@@ -145,6 +145,21 @@
  `(diff-hl-delete ((t (:foreground ,ground-red :background ,ground-red))))
  `(diff-hl-insert ((t (:foreground ,ground-green :background ,ground-green))))
 
+ ;; rainbow
+ `(rainbow-delimiters-base-error-face ((t (:foreground "#D9004A" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-base-face ((t (:inherit nil))))
+ `(rainbow-delimiters-depth-1-face ((t (:foreground "#C25151" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-2-face ((t (:foreground "#C28F51" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-3-face ((t (:foreground "#BCC251" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-4-face ((t (:foreground "#7AC251" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-5-face ((t (:foreground "#51C286" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-6-face ((t (:foreground "#51BAC2" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-7-face ((t (:foreground "#5155C2" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-8-face ((t (:foreground "#9951C2" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-depth-9-face ((t (:foreground "#C2518D" :inherit rainbow-delimiters-base-face))))
+ `(rainbow-delimiters-mismatched-face ((t (:inherit rainbow-delimiters-unmatched-face))))
+ `(rainbow-delimiters-unmatched-face ((t (:inherit rainbow-delimiters-base-error-face))))
+
  ;; linum
  `(line-number ((t (:foreground ,ground-foreground :background ,ground-background :underline nil :inherit default))))
  `(line-number-current-line ((t (:foreground ,ground-foreground :background ,ground-background :underline t :inherit default))))
@@ -158,15 +173,17 @@
  `(custom-group-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
  `(custom-face-tag ((t (:height 1.0 :weight bold :foreground "hot pink" :inherit default))))
  `(custom-variable-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
- `(widget-field ((t (:box (:line-width (1 . -1) :color "#D9004A") :background "#F57878" :extend t))))
- `(help-key-binding ((t (:box (:line-width (1 . -1) :color "grey35") :foreground "darkblue" :background "grey19"))))
+ `(widget-field ((t (:box nil :foreground ,ground-background :background "#F57878" :extend t))))
+ `(help-key-binding ((t (:box nil :foreground ,ground-background :background "#F57878"))))
 
  ;; mini buffer
  `(minibuffer-prompt ((t (:foreground "#E53E36"))))
 
  ;; mode line
- `(mode-line-buffer-id ((t :weight normal :foreground ,ground-fushsia)))
  `(mode-line ((t (:box nil :foreground ,ground-background :background "#96E0E0")))) ;; "#569677"
+ `(mode-line-buffer-id ((t (:weight normal :foreground ,ground-fushsia))))
+ `(mode-line-emphasis ((t (:weight bold))))
+ `(mode-line-highlight ((t (:box nil :foreground ,ground-purple))))
  `(mode-line-inactive ((t (:box nil :foreground ,ground-grey :background ,ground-background))))
 
  ;; markdown
