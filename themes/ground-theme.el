@@ -104,7 +104,7 @@
  '(custom-raised-buttons nil)
   ;; tooltip
  `(x-gtk-use-system-tooltips nil)
- `(tooltip-frame-parameters '((alpha . 100) (name . "tooltip") (internal-border-width . ,(window-font-width)) (border-width . 0) (no-special-glyphs . t))))
+ `(tooltip-frame-parameters '((alpha . 100) (name . "tooltip") (internal-border-width . 8) (border-width . 0) (no-special-glyphs . t))))
 
 (custom-theme-set-faces
  'ground
