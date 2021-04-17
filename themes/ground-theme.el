@@ -100,7 +100,11 @@
 
 (custom-theme-set-variables
  'ground
- '(custom-raised-buttons nil))
+ ;; widget
+ '(custom-raised-buttons nil)
+  ;; tooltip
+ `(x-gtk-use-system-tooltips nil)
+ `(tooltip-frame-parameters '((alpha . 100) (name . "tooltip") (internal-border-width . ,(window-font-width)) (border-width . 0) (no-special-glyphs . t))))
 
 (custom-theme-set-faces
  'ground
@@ -119,6 +123,7 @@
  `(fringe ((t (:foreground ,ground-foreground :background ,ground-background))))
  `(vertical-border ((t (:foreground ,ground-silver))))
  `(highlight ((t (:background "#96E0E0"))))
+ `(variable-pitch ((t (:family unspecified))))
 
  ;; font-lock
  `(font-lock-builtin-face ((t (:weight normal :foreground ,ground-purple))))
@@ -175,6 +180,9 @@
  `(custom-variable-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
  `(widget-field ((t (:box nil :foreground ,ground-background :background "#F57878" :extend t))))
  `(help-key-binding ((t (:box nil :foreground ,ground-background :background "#F57878"))))
+
+ ;; tooltip
+ `(tooltip ((t (:foreground ,ground-olive :background ,ground-purple :inherit variable-pitch))))
 
  ;; mini buffer
  `(minibuffer-prompt ((t (:foreground "#E53E36"))))
