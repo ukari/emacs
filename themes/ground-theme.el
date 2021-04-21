@@ -142,6 +142,10 @@
  `(font-lock-variable-name-face ((t (:foreground ,ground-blue))))
  `(font-lock-warning-face ((t (:weight bold :slant italic :underline t :foreground "red"))))
 
+ ;; header-line
+ `(header-line ((t (:foreground "grey20" :background "grey90" :box nil :inherit mode-line))))
+ `(header-line-highlight ((t (:inherit mode-line-highlight))))
+ 
  ;; imenu-list
  `(imenu-list-entry-face-1 ((t (:foreground ,ground-navy :inherit imenu-list-entry-face))))
  
@@ -178,8 +182,8 @@
  `(custom-group-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
  `(custom-face-tag ((t (:height 1.0 :weight bold :foreground "hot pink" :inherit default))))
  `(custom-variable-tag ((t (:height 1.2 :foreground ,ground-blue :inherit default))))
- `(widget-field ((t (:box nil :foreground ,ground-background :background "#F57878" :extend t))))
- `(help-key-binding ((t (:box nil :foreground ,ground-background :background "#F57878"))))
+ `(widget-field ((t (:foreground ,ground-background :background "#F57878" :box nil :extend t))))
+ `(help-key-binding ((t (:foreground ,ground-background :background "#F57878" :box nil))))
 
  ;; tooltip
  `(tooltip ((t (:foreground ,ground-olive :background ,ground-purple :inherit variable-pitch))))
@@ -188,11 +192,11 @@
  `(minibuffer-prompt ((t (:foreground "#E53E36"))))
 
  ;; mode line
- `(mode-line ((t (:box nil :foreground ,ground-background :background "#96E0E0")))) ;; "#569677"
+ `(mode-line ((t (:foreground ,ground-background :background "#96E0E0" :box nil)))) ;; "#569677"
  `(mode-line-buffer-id ((t (:weight normal :foreground ,ground-fushsia))))
  `(mode-line-emphasis ((t (:weight bold))))
- `(mode-line-highlight ((t (:box nil :foreground ,ground-purple))))
- `(mode-line-inactive ((t (:box nil :foreground ,ground-grey :background ,ground-background))))
+ `(mode-line-highlight ((t (:foreground ,ground-purple :box nil))))
+ `(mode-line-inactive ((t (:foreground ,ground-grey :background ,ground-background :box nil))))
 
  ;; markdown
  `(markdown-code-face ((t (:inherit default :foreground "#B029B0"))))
