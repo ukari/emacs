@@ -15,8 +15,10 @@
 
 (setq haskell-process-path-ghci "stack")
 (setq haskell-process-args-ghci '("ghci"))
-(setq haskell-compile-cabal-build-command "cabal new-build --ghc-option=-ferror-spans")
-(setq haskell-compile-cabal-build-alt-command "cabal new-clean -s && cabal new-build --ghc-option=-ferror-spans")
+(setq haskell-process-cabal-repl-command 'new-repl)
+(setq haskell-process-args-cabal-repl '("--ghc-option=-Wno-type-defaults" "--ghc-option=-ferror-spans"))
+;; (setq haskell-compile-cabal-build-command "cabal new-build --ghc-option=-ferror-spans")
+;; (setq haskell-compile-cabal-build-alt-command "cabal new-clean -s && cabal new-build --ghc-option=-ferror-spans")
 
 (advice-add #'haskell-process-load-file :around #'load-haskell-context-wrapper)
 
