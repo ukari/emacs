@@ -30,6 +30,7 @@
 - git
 - ground theme
 - ignore `.Xresource`
+- Material Design Icons [cheatsheet](https://pictogrammers.github.io/@mdi/font/5.4.55/)
 
 ### about git
 disable git's octal utf8 display to respect unicode
