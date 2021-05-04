@@ -17,6 +17,16 @@
   (message "overwrite-mode is not allow")
   nil)
 
+(delete-selection-mode 1)
+
+(global-set-key [backspace] #'backspace-delete)
+
+(defun backspace-delete (n)
+  (interactive "p")
+  (if (region-active-p)
+      (delete-region (region-beginning) (region-end))
+    (delete-backward-char n)))
+
 (on-init
  ;;default directory
  (cd (getenv "HOME")))
