@@ -14,7 +14,7 @@
 (advice-add #'overwrite-mode :around #'overwrite-mode-disable)
 
 (defun overwrite-mode-disable (origin &rest rest)
-  (message "overwrite-mode is not allow")
+  (message "Overwrite mode is not allow.")
   nil)
 
 (delete-selection-mode 1)
@@ -26,6 +26,17 @@
   (if (region-active-p)
       (delete-region (region-beginning) (region-end))
     (delete-backward-char n)))
+
+;; disable secondary selection
+(global-set-key [M-drag-mouse-1] #'secondary-selection-disabled-hint)
+(global-set-key [M-down-mouse-1] #'secondary-selection-disabled-hint)
+(global-set-key [M-mouse-1] #'secondary-selection-disabled-hint)
+(global-set-key [M-mouse-2] #'secondary-selection-disabled-hint)
+(global-set-key [M-mouse-3] #'secondary-selection-disabled-hint)
+
+(defun secondary-selection-disabled-hint ()
+  (interactive)
+  (message "Secondary selection is not allow."))
 
 (on-init
  ;;default directory
