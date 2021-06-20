@@ -3,6 +3,9 @@
 (on-init
  ;; visual line
  (global-visual-line-mode 1)
+ ;; mini buffer
+ (setq resize-mini-windows t)
+ (setq enable-recursive-minibuffers nil)
  ;; disable toolbar
  (tool-bar-mode 0)
  ;; disable menubar

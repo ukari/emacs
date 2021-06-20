@@ -1,6 +1,13 @@
 ;; -*- lexical-binding: t -*-
 
 (require-package 'haskell-mode)
+(require-package 'lsp-haskell)
+
+;; lsp-haskell
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+
+;; haskell-mode > haskell interactive mode
 (require 'haskell-interactive-mode)
 (require 'haskell-process)
 

@@ -3,6 +3,8 @@
 (require-package 'sr-speedbar)
 (require-package 'speedbar-git-respect)
 
+(require 'imenu-list)
+
 (require 'cl-lib)
 
 (speedbar-git-respect-mode t)
@@ -13,23 +15,25 @@
 
 (global-set-key (kbd "<f5>") (lambda() (interactive) (sr-speedbar-toggle)))
 
-(defun fix-speedbar-window (orign &rest rest)
-  (let ((result (apply orign rest))
-        (buffer (current-buffer)))
-    (set-buffer "*SPEEDBAR*")
-    (setq window-size-fixed t)
-    (speedbar-refresh)
-    (set-buffer buffer)
-    result))
+(defun fix-window (buffername &optional refresher)
+  (lambda (origin &rest rest)
+    (let ((result (apply origin rest))
+          (buffer (current-buffer)))
+      (with-current-buffer buffername
+        (set (make-local-variable 'window-size-fixed) 'width) ;; bug, when locally set to `t`, will cause minibuf size fixed too
+        (when refresher (funcall refresher)))
+      result)))
 
-(advice-add #'sr-speedbar-open :around #'fix-speedbar-window)
+(advice-add #'sr-speedbar-open :around (fix-window "*SPEEDBAR*" (lambda () (speedbar-refresh))))
+
+(advice-add #'imenu-list-minor-mode :around (fix-window imenu-list-buffer-name #'ignore))
 
 (add-hook 'speedbar-mode-hook (lambda () (visual-line-mode 0)))
 
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
 
-(defvar *skip-needing-buffers-list* (list "*SPEEDBAR*" "*Ilist*"))
+(defvar *skip-needing-buffers-list* (list "*SPEEDBAR*" imenu-list-buffer-name))
 
 (defun skipped-buffer-p (buffer)
   (member (buffer-name buffer) *skip-needing-buffers-list*))
@@ -90,11 +94,15 @@
 
 (defun skip-specific-buffers-inner (origin rest start-buffer)
   (interactive)
-  (apply origin rest)
-  (let ((current-buffer (current-buffer)))
-    (if (and (member (buffer-name current-buffer) *skip-needing-buffers-list*)
-             (not (eq start-buffer current-buffer)))
-        (skip-specific-buffers-inner origin rest start-buffer))))
+  (let ((old-buffer (current-buffer)))
+    (unwind-protect (apply origin rest)
+      (let ((current-buffer (current-buffer)))
+        (if (and (member (buffer-name current-buffer) *skip-needing-buffers-list*)
+                 (not (eq start-buffer current-buffer))
+                 (not (eq old-buffer current-buffer)))
+            (if (not (window-next-buffers (get-buffer-window (current-buffer))))                
+                (switch-to-buffer old-buffer)
+              (skip-specific-buffers-inner origin rest start-buffer)))))))
 
 (defun skip-specific-buffers-when-kill (origin &rest rest)
   (let ((name (buffer-name (current-buffer))))
