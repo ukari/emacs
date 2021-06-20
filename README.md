@@ -8,6 +8,7 @@
 - Noto Sans CJK JP
 - stack
 - glslangValidator
+- haskell-language-server
 
 ## Supports
 
