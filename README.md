@@ -2,7 +2,7 @@
 
 ## Dependencies
 - sbcl
-- Material Design Icons
+- Material Design Icons (not working)
 - Source Code Pro
 - Noto Sans CJK SC
 - Noto Sans CJK JP

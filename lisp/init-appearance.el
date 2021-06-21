@@ -38,8 +38,8 @@
     (let ((fontsize 10.5)
           (fontsize-cjk 12))
       (set-face-font 'default (concat "Source Code Pro-" (number-to-string fontsize)))
-      (set-fontset-font (face-attribute 'default :fontset) '(#xf000 . #xfffff)
-                        (font-spec :family "Material Design Icons" :size fontsize))
+      (set-fontset-font (face-attribute 'default :fontset) '(#xf0001 . #xf15b3)
+                        (font-spec :family "Material Design Icons" :registry "unicode" :foundry "PfEd" :size fontsize) nil 'prepend)
       (set-fontset-font (face-attribute 'default :fontset) 'cjk-misc
                         (font-spec :family "Noto Sans Mono CJK SC" :lang "ja" :size fontsize-cjk))
       (set-fontset-font (face-attribute 'default :fontset) 'cjk-misc
