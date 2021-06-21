@@ -94,7 +94,32 @@
   :group 'ground)
 
 (defcustom ground-silver "#C0C0C0"
-  "Silver color"
+  "Silver color."
+  :type 'string
+  :group 'ground)
+
+(defcustom ground-note ground-lime
+  "Note color."
+  :type 'string
+  :group 'ground)
+
+(defcustom ground-info ground-aqua
+  "Info color."
+  :type 'string
+  :group 'ground)
+
+(defcustom ground-warning ground-yellow
+  "Warning color."
+  :type 'string
+  :group 'ground)
+
+(defcustom ground-error ground-red
+  "Error color."
+  :type 'string
+  :group 'ground)
+
+(defcustom ground-success ground-green
+  "Success color."
   :type 'string
   :group 'ground)
 
@@ -124,6 +149,11 @@
  `(vertical-border ((t (:foreground ,ground-silver))))
  `(highlight ((t (:background "#96E0E0"))))
  `(variable-pitch ((t (:family unspecified))))
+ `(shadow ((t (:foreground "grey50"))))
+ `(homoglyph ((t (:foreground "brown"))))
+ `(warning ((t (:foreground ,ground-warning :weight bold))))
+ `(error ((t (:foreground ,ground-error :weight bold))))
+ `(success ((t (:foreground ,ground-success :weight bold))))
 
  ;; font-lock
  `(font-lock-builtin-face ((t (:weight normal :foreground ,ground-purple))))
@@ -140,10 +170,10 @@
  `(font-lock-string-face ((t (:foreground ,ground-olive))))
  `(font-lock-type-face ((t (:slant normal :foreground ,ground-lime))))
  `(font-lock-variable-name-face ((t (:foreground ,ground-blue))))
- `(font-lock-warning-face ((t (:weight bold :slant italic :underline t :foreground "red"))))
+ `(font-lock-warning-face ((t (:weight bold :slant italic :underline t :foreground ,ground-warning))))
 
  ;; header-line
- `(header-line ((t (:foreground "grey20" :background "grey90" :box nil :inherit mode-line))))
+ `(header-line ((t (:foreground ,ground-lime :background ,ground-background :underline nil :box nil :inherit mode-line))))
  `(header-line-highlight ((t (:inherit mode-line-highlight))))
  
  ;; imenu-list
@@ -212,6 +242,31 @@
  `(speedbar-directory-face ((t (:foreground ,ground-navy :inherit default))))
  `(speedbar-file-face ((t (:foreground ,ground-purple :inherit default))))
  `(speedbar-highlight-face ((t (:foreground "#D9004A" :inherit default))))
- `(speedbar-selected-face ((t (:foreground ,ground-maroon :underline t)))))
+ `(speedbar-selected-face ((t (:foreground ,ground-maroon :underline t))))
+
+ ;; flycheck
+ `(flycheck-error ((t (:underline (:color ,ground-error :style wave)))))
+ `(flycheck-info ((t (:underline (:color ,ground-info :style wave)))))
+ `(flycheck-warning ((t (:underline (:color ,ground-warning :style wave)))))
+
+ ;; flymake
+ `(flymake-error ((t (:underline (:color ,ground-error :style wave)))))
+ `(flymake-note ((t (:underline (:color ,ground-note :style wave)))))
+ `(flymake-warning ((t (:underline (:color ,ground-warning :style wave)))))
+
+ ;; lsp
+ `(lsp-headerline-breadcrumb-path-error-face ((t (:underline (:color ,ground-error :style wave) :inherit lsp-headerline-breadcrumb-path-face))))
+ `(lsp-headerline-breadcrumb-path-hint-face ((t (:underline (:color ,ground-green :style wave) :inherit lsp-headerline-breadcrumb-path-face))))
+ `(lsp-headerline-breadcrumb-path-info-face ((t (:underline (:color ,ground-lime :style wave) :inherit lsp-headerline-breadcrumb-path-face))))
+ `(lsp-headerline-breadcrumb-path-warning-face ((t (:underline (:color ,ground-warning :style wave) :inherit lsp-headerline-breadcrumb-path-face))))
+ `(lsp-headerline-breadcrumb-symbols-error-face ((t (:underline (:color ,ground-error :style wave) :inherit lsp-headerline-breadcrumb-symbols-face))))
+ `(lsp-headerline-breadcrumb-symbols-hint-face ((t (:underline (:color ,ground-green :style wave) :inherit lsp-headerline-breadcrumb-symbols-face))))
+ `(lsp-headerline-breadcrumb-symbols-info-face ((t (:underline (:color ,ground-lime :style wave) :inherit lsp-headerline-breadcrumb-symbols-face))))
+ `(lsp-headerline-breadcrumb-symbols-warning-face ((t (:underline (:color ,ground-warning :style wave) :inherit lsp-headerline-breadcrumb-symbols-face))))
+ `(lsp-headerline-breadcrumb-unknown-project-prefix-face ((t (:weight bold :inherit shadow))))
+ `(lsp-installation-buffer-face ((t (:foreground ,ground-teal))))
+ `(lsp-installation-finished-buffer-face ((t (:foreground ,ground-yellow))))
+ `(lsp-modeline-code-actions-face ((t (:inherit homoglyph))))
+ `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,ground-olive)))))
 
 (provide-theme 'ground)
