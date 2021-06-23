@@ -5,7 +5,6 @@
 - Material Design Icons (not working)
 - Source Code Pro
 - Noto Sans CJK SC
-- Noto Sans CJK JP
 - stack
 - glslangValidator
 - haskell-language-server
