@@ -15,10 +15,31 @@
 
 (global-set-key (kbd "<f5>") (lambda() (interactive) (sr-speedbar-toggle)))
 
+(defun min-size-memory-window (buffername)
+  (funcall (lambda (init-width)
+             (lambda (origin &rest rest)
+               (let ((result (apply origin rest))
+                     (buffer (get-buffer buffername))
+                     (old-size (make-local-variable 'window-size-fixed)))
+                 (when buffer
+                   (with-current-buffer buffername
+                     (set (make-local-variable 'window-size-fixed) nil)
+                     (let ((old-window (selected-window))
+                           (window (get-buffer-window buffer)))
+                       (select-window window)
+                       (if init-width
+                           (enlarge-window-horizontally (- init-width (window-total-width)))
+                         (setf init-width (window-total-width)))
+                       (select-window old-window))
+                     (set (make-local-variable 'window-size-fixed) old-size)))
+                 result)))
+           nil))
+
+(advice-add #'sr-speedbar-open :around (min-size-memory-window "*SPEEDBAR*"))
+
 (defun fix-window (buffername &optional refresher)
   (lambda (origin &rest rest)
-    (let ((result (apply origin rest))
-          (buffer (current-buffer)))
+    (let ((result (apply origin rest)))
       (with-current-buffer buffername
         (set (make-local-variable 'window-size-fixed) 'width) ;; bug, when locally set to `t`, will cause minibuf size fixed too
         (when refresher (funcall refresher)))
