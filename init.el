@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 (package-initialize)
 
@@ -28,8 +28,9 @@
 (require 'init-auto-revert)
 
 ;; hub
-(require 'init-project)
 (require 'init-imenu-list)
+(require 'init-project)
+
 (require 'init-welcome)
 
 ;; coding
