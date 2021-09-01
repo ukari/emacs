@@ -78,7 +78,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-teal "#537c8a" ;; "#a1c7b9" ;;"#a1c1b4" ;;"#a3ceb6" ;;"#00838C"
+(defcustom ground-teal "#51638a";;"#537c8a" ;; "#a1c7b9" ;;"#a1c1b4" ;;"#a3ceb6" ;;"#00838C"
   "Teal color."
   :type 'string
   :group 'ground)
