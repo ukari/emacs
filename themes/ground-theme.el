@@ -43,7 +43,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-lime "#7CC470"
+(defcustom ground-lime "#a9c781" ;;"#7CC470"
   "Lime color."
   :type 'string
   :group 'ground)
@@ -78,7 +78,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-teal "#00838C"
+(defcustom ground-teal "#537c8a" ;; "#a1c7b9" ;;"#a1c1b4" ;;"#a3ceb6" ;;"#00838C"
   "Teal color."
   :type 'string
   :group 'ground)
@@ -123,6 +123,11 @@
   :type 'string
   :group 'ground)
 
+(defcustom ground-highlight "#8ae6d8" ;; "#96E0E0" ;;"#00838C"
+  "Highlight color."
+  :type 'string
+  :group 'ground)
+
 (custom-theme-set-variables
  'ground
  ;; widget
@@ -141,13 +146,13 @@
 
  ;; cursor
  `(cursor ((t (:background ,ground-teal))))
- `(region ((t (:background "#96E0E0" :extend t :inherit highlight))))
+ `(region ((t (:background ,ground-highlight :extend t :inherit highlight))))
 
  ;; appearance
  `(menu ((t (:foreground ,ground-foreground :background ,ground-background))))
  `(fringe ((t (:foreground ,ground-foreground :background ,ground-background))))
  `(vertical-border ((t (:foreground ,ground-silver))))
- `(highlight ((t (:background "#96E0E0"))))
+ `(highlight ((t (:background ,ground-highlight))))
  `(variable-pitch ((t (:family unspecified))))
  `(shadow ((t (:foreground "grey50"))))
  `(homoglyph ((t (:foreground "brown"))))
@@ -222,10 +227,10 @@
  `(minibuffer-prompt ((t (:foreground "#E53E36"))))
 
  ;; mode line
- `(mode-line ((t (:foreground ,ground-background :background "#96E0E0" :box nil)))) ;; "#569677"
- `(mode-line-buffer-id ((t (:weight normal :foreground ,ground-fushsia))))
+ `(mode-line ((t (:foreground ,ground-background :background ,ground-highlight :box nil)))) ;; "#569677"
+ `(mode-line-buffer-id ((t (:weight normal :foreground ,ground-fushsia)))) ;;,ground-yellow
  `(mode-line-emphasis ((t (:weight bold))))
- `(mode-line-highlight ((t (:foreground ,ground-purple :box nil))))
+ `(mode-line-highlight ((t (:foreground ,ground-purple :box nil)))) ;; "#f1dd6a"
  `(mode-line-inactive ((t (:foreground ,ground-grey :background ,ground-background :box nil))))
 
  ;; markdown
