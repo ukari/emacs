@@ -13,7 +13,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-background "#FAFAD9"
+(defcustom ground-background "#fafae8";;"#FAFAD9"
   "Background color."
   :type 'string
   :group 'ground)
