@@ -40,6 +40,7 @@
 (require 'init-lsp)
 
 ;; language
+(require 'init-text)
 (require 'init-elisp)
 (require 'init-git)
 (require 'init-common-lisp)
