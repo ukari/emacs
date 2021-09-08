@@ -123,7 +123,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-highlight "#8ae6d8" ;; "#96E0E0" ;;"#00838C"
+(defcustom ground-highlight "#8ae6c8" ;;"#8ae6cf" ;;"#8ae6d8" ;; "#96E0E0" ;;"#00838C"
   "Highlight color."
   :type 'string
   :group 'ground)
