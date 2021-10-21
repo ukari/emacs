@@ -43,7 +43,7 @@
   :type 'string
   :group 'ground)
 
-(defcustom ground-lime "#a9c781" ;;"#7CC470"
+(defcustom ground-lime "#e3d397";;"#e3d19a";; "#e6d197";;"#dfd993";;"#9de0ad";;"#a3d9bf" ;;"#a9c781" ;;"#7CC470"
   "Lime color."
   :type 'string
   :group 'ground)
