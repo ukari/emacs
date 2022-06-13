@@ -8,3 +8,7 @@ url/
 .#*
 *.swp
 .lsp-session-*
+.cache/
+.dap-breakpoints
+eclipse.jdt.ls/
+workspace/

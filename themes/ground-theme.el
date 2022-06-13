@@ -234,13 +234,13 @@
  `(mode-line-inactive ((t (:foreground ,ground-grey :background ,ground-background :box nil))))
 
  ;; markdown
- `(markdown-code-face ((t (:inherit default :foreground "#B029B0"))))
- `(markdown-header-face ((t (:foreground ,ground-olive))))
+ `(markdown-code-face ((t (:inherit font-lock-builtin-face))))
+ `(markdown-header-face ((t (:inherit font-lock-function-name-face))))
  `(markdown-header-face-1 ((t (:height 1.0 :inherit markdown-header-face))))
  `(markdown-header-face-2 ((t (:height 1.0 :inherit markdown-header-face))))
  `(markdown-header-face-3 ((t (:height 1.0 :inherit markdown-header-face))))
  `(markdown-header-face-4 ((t (:height 1.0 :inherit markdown-header-face))))
- `(markdown-inline-code-face ((t (:foreground "#B029B0" :inherit font-lock-constant-face))))
+ `(markdown-inline-code-face ((t (:inherit font-lock-builtin-face))))
 
  ;; speedbar
  `(speedbar-button-face ((t (:foreground ,ground-fushsia :inherit default))))
