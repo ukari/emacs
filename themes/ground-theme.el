@@ -274,4 +274,7 @@
  `(lsp-modeline-code-actions-face ((t (:inherit homoglyph))))
  `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,ground-olive)))))
 
+;; slime
+`(slime-repl-output-mouseover-face ((t (:box nil :inherit slime-repl-inputed-output-face))))
+
 (provide-theme 'ground)
