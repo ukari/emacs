@@ -14,4 +14,8 @@
 
 (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
 
+
+;; Reinstall quicklisp at the Emacs' SLIME REPL. https://stackoverflow.com/a/65560521
+
+
 (provide 'init-common-lisp)
