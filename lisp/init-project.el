@@ -6,6 +6,7 @@
 (require 'imenu-list)
 
 (require 'cl-lib)
+(require 'speedbar)
 
 (speedbar-git-respect-mode t)
 
@@ -166,6 +167,15 @@
 
 (defun previous-window-alternative (origin &rest rest)
   (other-window-special-without-skipped-buffers -1))
+
+;; bug fix: c-x c-f create new file and then c-x c-s save new file, speedbar will write to incorrect buffer
+(advice-add #'speedbar-file-lists :around #'test-speedbar-update)
+(advice-add #'speedbar-stealthy-updates :around #'test-speedbar-update)
+(defun test-speedbar-update (origin &rest rest)
+  ;; (backtrace)
+  ;; (print (current-buffer))
+  (with-current-buffer speedbar-buffer
+    (apply origin rest)))
 
 (advice-add #'sr-speedbar-before-visiting-file-hook :around #'previous-window-alternative)
 (advice-add #'sr-speedbar-before-visiting-tag-hook :around #'previous-window-alternative)

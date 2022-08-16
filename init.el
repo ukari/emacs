@@ -53,8 +53,8 @@
 (require 'init-markdown)
 (require 'init-rst)
 (require 'init-fountain)
-;(require 'init-javascript)
-;(require 'init-lsp-java)
+(require 'init-javascript)
+(require 'init-lsp-java)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (if (file-exists-p custom-file)
