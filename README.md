@@ -23,6 +23,8 @@
 - JSON
 - fountain
 - text
+- javascript
+- java
 
 ## Config
 - set path for lisp environment on `inferior-lisp-program` in `/lisp/init-common-lisp.el`
